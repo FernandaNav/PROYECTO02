@@ -44,7 +44,6 @@
             this.logOut = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.inicioB2 = new PROYECTO02.InicioB();
-            this.gestUsuarios2 = new PROYECTO02.GestUsuarios(this.biblioteca);
             this.panelOpBibliotecario.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -251,16 +250,7 @@
             this.inicioB2.Name = "inicioB2";
             this.inicioB2.Size = new System.Drawing.Size(981, 620);
             this.inicioB2.TabIndex = 3;
-            // 
-            // gestUsuarios2
-            // 
-            this.gestUsuarios2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
-            this.gestUsuarios2.Biblioteca = null;
-            this.gestUsuarios2.Location = new System.Drawing.Point(356, 80);
-            this.gestUsuarios2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gestUsuarios2.Name = "gestUsuarios2";
-            this.gestUsuarios2.Size = new System.Drawing.Size(981, 624);
-            this.gestUsuarios2.TabIndex = 4;
+            this.inicioB2.Load += new System.EventHandler(this.inicioB2_Load);
             // 
             // Menu
             // 
@@ -268,7 +258,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(1337, 704);
-            this.Controls.Add(this.gestUsuarios2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelOpBibliotecario);
             this.Controls.Add(this.inicioB2);

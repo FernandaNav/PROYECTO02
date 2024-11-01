@@ -12,7 +12,7 @@ namespace PROYECTO02
 {
     public partial class Menu : Form
     {
-        private Biblioteca biblioteca;
+        private Biblioteca biblioteca; //RECORDAR SIEMPRE INICIALIZAR LA BIBLIOTECA
 
         public Menu(Biblioteca biblioteca)
         {
@@ -45,13 +45,13 @@ namespace PROYECTO02
             slidePanel.Height = btnUsuarios.Height;
             slidePanel.Top = btnUsuarios.Top;
             GestUsuarios gestUsuarios = new GestUsuarios(this.biblioteca);
-            //gestUsuarios2.BringToFront();
 
             // Crear la instancia de GestUsuarios y asignar la biblioteca
-            gestUsuarios.Biblioteca = biblioteca; // Aquí pasas la biblioteca
+            gestUsuarios.Biblioteca = biblioteca; // Aquí paso la biblioteca
 
-            this.Controls.Add(gestUsuarios); // Asegúrate de agregar el control a tu formulario
+            this.Controls.Add(gestUsuarios); // Se agrega el control al formulario
             gestUsuarios.BringToFront();
+            gestUsuarios.Location = new System.Drawing.Point(265, 68);
         }
 
         private void gestUsuarios1_Load(object sender, EventArgs e)
@@ -60,6 +60,11 @@ namespace PROYECTO02
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void inicioB2_Load(object sender, EventArgs e)
         {
 
         }

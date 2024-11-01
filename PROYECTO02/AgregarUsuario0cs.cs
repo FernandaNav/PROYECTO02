@@ -18,6 +18,7 @@ namespace PROYECTO02
         {
             this.biblioteca = biblioteca;
             InitializeComponent();
+            dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
         }
         private void btnLimpiar1_Click(object sender, EventArgs e)
         {
@@ -50,6 +51,12 @@ namespace PROYECTO02
             string rol = cmbUsuarioNew.SelectedItem.ToString();
             Usuario nuevoUsuario;
 
+            if (biblioteca.ObtenerUsuarios().Any(u => u.Nombre == nombre)) // Asegúrate de que la propiedad Nombre exista en tu clase Usuario
+            {
+                MessageBox.Show($"El nombre de usuario '{nombre}' ya existe. Intenta con otro.");
+                return;
+            }
+
             if (rol == "Bibliotecario")
             {
                 nuevoUsuario = new Bibliotecario(nombre, contraseña);
@@ -69,13 +76,23 @@ namespace PROYECTO02
                 return;
             }
             biblioteca.AgregarUsuario(nuevoUsuario);
-            biblioteca.AgregarUsuario(nuevoUsuario);
+            dataGridViewUsuarios.DataSource = null;
+            dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
             MessageBox.Show("Usuario registrado exitosamente.");
+            txtNombreNew.Text = "";
+            txtPasswordNew.Text = "";
+
         }
-        public void ActualizarDataGridView(List<Usuario> usuarios)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            dataGridViewUsuarios.DataSource = null; // Restablece el origen de datos para refrescar
-            dataGridViewUsuarios.DataSource = usuarios; // Asigna la lista de usuarios como origen de datos
+            this.Hide();
+        }
+
+        private void AgregarUsuario0cs_Load(object sender, EventArgs e)
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(532, 120);
         }
     }
 }

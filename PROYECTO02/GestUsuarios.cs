@@ -46,5 +46,16 @@ namespace PROYECTO02
         {
 
         }
+
+        private void btnOpEditarUsuario_Click(object sender, EventArgs e)
+        {
+            EditarUsuariocs editarEliminar = new EditarUsuariocs(this.Biblioteca);
+            editarEliminar.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

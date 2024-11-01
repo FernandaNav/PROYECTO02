@@ -41,11 +41,12 @@ namespace PROYECTO02
             }
         }
 
-        public void EditarUsuario(string nombre, string nuevaContraseña, string nuevoRol)
+        public void EditarUsuario(string nombreOriginal, string nuevoNombre, string nuevaContraseña, string nuevoRol)
         {
-            var usuario = BuscarUsuario(nombre);
+            var usuario = BuscarUsuario(nombreOriginal);
             if (usuario != null)
             {
+                usuario.Nombre = nuevoNombre;
                 usuario.Contrasena = nuevaContraseña;
                 usuario.Rol = nuevoRol;
             }
