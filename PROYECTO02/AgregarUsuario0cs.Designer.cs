@@ -91,6 +91,7 @@
             this.cmbUsuarioNew.Name = "cmbUsuarioNew";
             this.cmbUsuarioNew.Size = new System.Drawing.Size(424, 44);
             this.cmbUsuarioNew.TabIndex = 26;
+            this.cmbUsuarioNew.SelectedIndexChanged += new System.EventHandler(this.cmbUsuarioNew_SelectedIndexChanged);
             // 
             // txtPasswordNew
             // 
@@ -101,6 +102,7 @@
             this.txtPasswordNew.Name = "txtPasswordNew";
             this.txtPasswordNew.Size = new System.Drawing.Size(424, 37);
             this.txtPasswordNew.TabIndex = 25;
+            this.txtPasswordNew.TextChanged += new System.EventHandler(this.txtPasswordNew_TextChanged);
             // 
             // txtNombreNew
             // 
@@ -111,6 +113,7 @@
             this.txtNombreNew.Name = "txtNombreNew";
             this.txtNombreNew.Size = new System.Drawing.Size(424, 37);
             this.txtNombreNew.TabIndex = 24;
+            this.txtNombreNew.TextChanged += new System.EventHandler(this.txtNombreNew_TextChanged);
             // 
             // label3
             // 
@@ -124,6 +127,7 @@
             this.label3.Size = new System.Drawing.Size(56, 42);
             this.label3.TabIndex = 23;
             this.label3.Text = "Rol:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -137,6 +141,7 @@
             this.label2.Size = new System.Drawing.Size(118, 42);
             this.label2.TabIndex = 22;
             this.label2.Text = "Nombre:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -150,6 +155,7 @@
             this.label1.Size = new System.Drawing.Size(163, 42);
             this.label1.TabIndex = 21;
             this.label1.Text = "Contraseña:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -163,6 +169,7 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Agregar Usuario";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dataGridViewUsuarios
             // 
@@ -174,6 +181,7 @@
             this.dataGridViewUsuarios.RowTemplate.Height = 24;
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(607, 186);
             this.dataGridViewUsuarios.TabIndex = 29;
+            this.dataGridViewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellContentClick);
             // 
             // button1
             // 

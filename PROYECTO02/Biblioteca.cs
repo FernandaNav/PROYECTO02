@@ -13,11 +13,11 @@ namespace PROYECTO02
 
         public Biblioteca()
         {
-            usuarios = new List<Usuario>(); // Inicializa la lista de usuarios
-                                            // Crear usuario fijo
+            usuarios = new List<Usuario>(); //Inicializa la lista de usuarios
+                                           
             usuarios.Add(new Bibliotecario("Fernanda", "Chuchu"));
         }
-
+        //MÉTODOS PARA USUARIOS
         public void AgregarUsuario(Usuario usuario)
         {
             usuarios.Add(usuario);
@@ -30,6 +30,10 @@ namespace PROYECTO02
 
         public void EliminarUsuario(string nombre)
         {
+            if (nombre.Equals("Fernanda", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new Exception("No se permite eliminar al usuario Fernanda.");
+            }
             var usuario = BuscarUsuario(nombre);
             if (usuario != null)
             {
@@ -43,12 +47,17 @@ namespace PROYECTO02
 
         public void EditarUsuario(string nombreOriginal, string nuevoNombre, string nuevaContraseña, string nuevoRol)
         {
+            if (nombreOriginal.Equals("Fernanda", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new Exception("No se permite editar al usuario Fernanda.");
+            }
+
             var usuario = BuscarUsuario(nombreOriginal);
             if (usuario != null)
             {
-                usuario.Nombre = nuevoNombre;
-                usuario.Contrasena = nuevaContraseña;
-                usuario.Rol = nuevoRol;
+                usuario.Nombre = nuevoNombre; 
+                usuario.Contrasena = nuevaContraseña; 
+                usuario.Rol = nuevoRol; 
             }
             else
             {
@@ -65,12 +74,14 @@ namespace PROYECTO02
             var usuario = usuarios.Find(u => u.Nombre == nombre);
             if (usuario != null && usuario.Contrasena == contraseña)
             {
-                return usuario; // Retorna el usuario si las credenciales son válidas
+                return usuario;
             }
             else
             {
                 throw new Exception("Credenciales incorrectas.");
             }
         }
+        //TERMINA MÉTODOS USUARIO
+        //INICIAMOS CON MÉTODOS PARA LIBROS
     }
 }

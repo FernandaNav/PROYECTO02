@@ -81,6 +81,7 @@ namespace PROYECTO02
             MessageBox.Show("Usuario registrado exitosamente.");
             txtNombreNew.Text = "";
             txtPasswordNew.Text = "";
+            cmbUsuarioNew.SelectedIndex = -1;
 
         }
 
@@ -93,6 +94,46 @@ namespace PROYECTO02
         {
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(532, 120);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreNew_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPasswordNew_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbUsuarioNew_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

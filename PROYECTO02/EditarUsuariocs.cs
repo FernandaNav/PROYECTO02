@@ -89,15 +89,14 @@ namespace PROYECTO02
             try
             {
                 biblioteca.EditarUsuario(usuarioActual.Nombre, nuevoNombre, nuevaContraseña, nuevoRol);
+                usuarioActual.Nombre = nuevoNombre;
                 MessageBox.Show("Usuario actualizado exitosamente.");
-                // Actualiza el DataGridView
                 ActualizarDataGridView();
-
-                LimpiarCampos(); // Limpia los campos después de guardar
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message); // Mostrar el mensaje de error si hay uno
+                MessageBox.Show(ex.Message);
             }
         }
         private void LimpiarCampos()
@@ -109,11 +108,12 @@ namespace PROYECTO02
             usuarioActual = null;
             btnEditar.Visible = false;
             btnEliminar.Visible = false;
+            panEditar.Visible = false;
         }
         private void ActualizarDataGridView()
         {
-            dataGridViewUsuarios.DataSource = null; // Limpia el DataSource actual
-            dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios(); // Asigna la lista actualizada
+            dataGridViewUsuarios.DataSource = null; 
+            dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -128,7 +128,6 @@ namespace PROYECTO02
                 MessageBox.Show("Por favor, busque un usuario antes de eliminar.");
                 return;
             }
-            //todavía quiero agregar que no sea posible eliminar ni editar al usuario Fernanda
             DialogResult result = MessageBox.Show($"¿Está seguro de que desea eliminar al usuario '{usuarioActual.Nombre}'?", "Confirmar Eliminación", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
