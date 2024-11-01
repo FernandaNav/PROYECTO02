@@ -45,12 +45,13 @@ namespace PROYECTO02
             slidePanel.Height = btnUsuarios.Height;
             slidePanel.Top = btnUsuarios.Top;
             GestUsuarios gestUsuarios = new GestUsuarios(this.biblioteca);
-            gestUsuarios2.BringToFront();
+            //gestUsuarios2.BringToFront();
 
             // Crear la instancia de GestUsuarios y asignar la biblioteca
             gestUsuarios.Biblioteca = biblioteca; // Aquí pasas la biblioteca
 
             this.Controls.Add(gestUsuarios); // Asegúrate de agregar el control a tu formulario
+            gestUsuarios.BringToFront();
         }
 
         private void gestUsuarios1_Load(object sender, EventArgs e)

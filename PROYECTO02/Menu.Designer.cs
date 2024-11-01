@@ -303,7 +303,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLibros;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
-        private GestUsuarios gestUsuarios1;
         private InicioB inicioB2;
         private GestUsuarios gestUsuarios2;
     }
