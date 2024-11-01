@@ -53,7 +53,7 @@ namespace PROYECTO02
                 txtNombreEdit.Text = usuarioActual.Nombre; // Asegúrate de que la propiedad Nombre existe
                 txtPasswordEdit.Text = usuarioActual.Contrasena; // Asegúrate de que la propiedad Contrasena existe
                 cmbRolEdit.SelectedItem = usuarioActual.Rol; // Asegúrate de que la propiedad Rol existe
-                MessageBox.Show("Usuario encontrado. Puede editar o eliminar los datos.");
+                MessageBox.Show("Usuario encontrado. Puede editar o eliminar los datos.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 panEditar.Visible = true;
                 btnEditar.Visible = true;
@@ -61,7 +61,7 @@ namespace PROYECTO02
             }
             else
             {
-                MessageBox.Show("Usuario no encontrado. Por favor, verifica el nombre ingresado.");
+                MessageBox.Show("Usuario no encontrado. Por favor, verifica el nombre ingresado.", "",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 LimpiarCampos();
             }
         }
@@ -70,7 +70,7 @@ namespace PROYECTO02
         {
             if (usuarioActual == null)
             {
-                MessageBox.Show("Por favor, busque un usuario antes de editar.");
+                MessageBox.Show("Por favor, busque un usuario antes de editar.","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -78,7 +78,7 @@ namespace PROYECTO02
                 string.IsNullOrWhiteSpace(txtPasswordEdit.Text) ||
                 string.IsNullOrWhiteSpace(cmbRolEdit.Text))
             {
-                MessageBox.Show("Por favor, llena todos los campos antes de editar.");
+                MessageBox.Show("Por favor, llena todos los campos antes de editar.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -90,7 +90,7 @@ namespace PROYECTO02
             {
                 biblioteca.EditarUsuario(usuarioActual.Nombre, nuevoNombre, nuevaContraseña, nuevoRol);
                 usuarioActual.Nombre = nuevoNombre;
-                MessageBox.Show("Usuario actualizado exitosamente.");
+                MessageBox.Show("Usuario actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ActualizarDataGridView();
                 LimpiarCampos();
             }
@@ -125,16 +125,16 @@ namespace PROYECTO02
         {
             if (usuarioActual == null)
             {
-                MessageBox.Show("Por favor, busque un usuario antes de eliminar.");
+                MessageBox.Show("Por favor, busque un usuario antes de eliminar.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DialogResult result = MessageBox.Show($"¿Está seguro de que desea eliminar al usuario '{usuarioActual.Nombre}'?", "Confirmar Eliminación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($"¿Está seguro de que desea eliminar al usuario '{usuarioActual.Nombre}'?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 try
                 {
                     biblioteca.EliminarUsuario(usuarioActual.Nombre);
-                    MessageBox.Show("Usuario eliminado exitosamente.");
+                    MessageBox.Show("Usuario eliminado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ActualizarDataGridView();
 
                     LimpiarCampos(); 

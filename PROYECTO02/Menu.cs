@@ -46,10 +46,10 @@ namespace PROYECTO02
             slidePanel.Top = btnUsuarios.Top;
             GestUsuarios gestUsuarios = new GestUsuarios(this.biblioteca);
 
-            // Crear la instancia de GestUsuarios y asignar la biblioteca
-            gestUsuarios.Biblioteca = biblioteca; // Aquí paso la biblioteca
+            //Crea la instancia de GestUsuarios y asigna la biblioteca
+            gestUsuarios.Biblioteca = biblioteca; //Aquí paso la biblioteca
 
-            this.Controls.Add(gestUsuarios); // Se agrega el control al formulario
+            this.Controls.Add(gestUsuarios); //Se agrega el control al formulario
             gestUsuarios.BringToFront();
             gestUsuarios.Location = new System.Drawing.Point(265, 68);
         }
@@ -67,6 +67,13 @@ namespace PROYECTO02
         private void inicioB2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLibros_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnLibros.Height;
+            slidePanel.Top = btnLibros.Top;
+            gestLibros1.BringToFront();
         }
     }
 }

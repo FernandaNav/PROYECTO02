@@ -12,23 +12,15 @@ namespace PROYECTO02
         public string Autor { get; set; }
         public string ISBN { get; set; }
         public string Genero { get; set; }
-        public bool Disponible { get; set; }
+        public bool Disponible { get; set; } 
 
-        public Libro(string titulo, string autor, string iSBN, string genero, bool disponible)
+        public Libro(string titulo, string autor, string isbn, string genero)
         {
             Titulo = titulo;
             Autor = autor;
-            ISBN = iSBN;
+            ISBN = isbn;
             Genero = genero;
-            Disponible = disponible;
+            Disponible = true; 
         }
-        public void EditarLibro(string nuevoTitulo, string nuevoAutor, string nuevoISBN, string nuevoGenero)
-        {
-            Titulo = nuevoTitulo;
-            Autor = nuevoAutor;
-            ISBN = nuevoISBN;
-            Genero = nuevoGenero;
-        }
-
     }
 }

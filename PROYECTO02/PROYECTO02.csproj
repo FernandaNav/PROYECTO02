@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarLibro.Designer.cs">
+      <DependentUpon>AgregarLibro.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestLibros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GestLibros.Designer.cs">
+      <DependentUpon>GestLibros.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +134,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="AgregarLibro.resx">
+      <DependentUpon>AgregarLibro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestLibros.resx">
+      <DependentUpon>GestLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestUsuarios.resx">
       <DependentUpon>GestUsuarios.cs</DependentUpon>

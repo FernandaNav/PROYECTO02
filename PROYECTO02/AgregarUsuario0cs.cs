@@ -43,7 +43,7 @@ namespace PROYECTO02
                 string.IsNullOrWhiteSpace(txtPasswordNew.Text) ||
                 string.IsNullOrWhiteSpace(cmbUsuarioNew.Text))
             {
-                MessageBox.Show("Por favor, llena todos los campos antes de agregar el usuario.");
+                MessageBox.Show("Por favor, llena todos los campos antes de agregar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string nombre = txtNombreNew.Text;
@@ -53,7 +53,7 @@ namespace PROYECTO02
 
             if (biblioteca.ObtenerUsuarios().Any(u => u.Nombre == nombre)) // Asegúrate de que la propiedad Nombre exista en tu clase Usuario
             {
-                MessageBox.Show($"El nombre de usuario '{nombre}' ya existe. Intenta con otro.");
+                MessageBox.Show($"El nombre de usuario '{nombre}' ya existe. Intenta con otro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

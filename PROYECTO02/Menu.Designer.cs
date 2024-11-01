@@ -44,6 +44,7 @@
             this.logOut = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.inicioB2 = new PROYECTO02.InicioB();
+            this.gestLibros1 = new PROYECTO02.GestLibros(this.biblioteca);
             this.panelOpBibliotecario.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -189,6 +190,7 @@
             this.btnLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLibros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLibros.UseVisualStyleBackColor = true;
+            this.btnLibros.Click += new System.EventHandler(this.btnLibros_Click);
             // 
             // btnHome
             // 
@@ -252,12 +254,21 @@
             this.inicioB2.TabIndex = 3;
             this.inicioB2.Load += new System.EventHandler(this.inicioB2_Load);
             // 
+            // gestLibros1
+            // 
+            this.gestLibros1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
+            this.gestLibros1.Location = new System.Drawing.Point(356, 80);
+            this.gestLibros1.Name = "gestLibros1";
+            this.gestLibros1.Size = new System.Drawing.Size(981, 624);
+            this.gestLibros1.TabIndex = 4;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(1337, 704);
+            this.Controls.Add(this.gestLibros1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelOpBibliotecario);
             this.Controls.Add(this.inicioB2);
@@ -294,5 +305,6 @@
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private InicioB inicioB2;
         private GestUsuarios gestUsuarios2;
+        private GestLibros gestLibros1;
     }
 }

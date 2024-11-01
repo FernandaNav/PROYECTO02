@@ -63,7 +63,7 @@ namespace PROYECTO02
                     // Verificar que el rol del usuario autenticado coincida con el rol seleccionado
                     if (usuarioAutenticado.Rol == rol)
                     {
-                        MessageBox.Show("Inicio de sesión exitoso como " + rol + ".");
+                        MessageBox.Show("Inicio de sesión exitoso como " + rol + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Si el rol es bibliotecario, abrir el menú de bibliotecario
                         if (rol == "Bibliotecario")
@@ -79,12 +79,12 @@ namespace PROYECTO02
                     }
                     else
                     {
-                        MessageBox.Show("El rol del usuario no coincide con el rol seleccionado.");
+                        MessageBox.Show("El rol del usuario no coincide con el rol seleccionado.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
