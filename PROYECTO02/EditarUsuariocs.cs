@@ -128,7 +128,7 @@ namespace PROYECTO02
                 MessageBox.Show("Por favor, busque un usuario antes de eliminar.");
                 return;
             }
-
+            //todavía quiero agregar que no sea posible eliminar ni editar al usuario Fernanda
             DialogResult result = MessageBox.Show($"¿Está seguro de que desea eliminar al usuario '{usuarioActual.Nombre}'?", "Confirmar Eliminación", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
