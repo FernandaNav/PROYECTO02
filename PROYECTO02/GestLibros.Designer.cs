@@ -100,6 +100,7 @@
             this.btnEliminarLibro.TabIndex = 14;
             this.btnEliminarLibro.Text = "Eliminar Libro";
             this.btnEliminarLibro.UseVisualStyleBackColor = false;
+            this.btnEliminarLibro.Click += new System.EventHandler(this.btnEliminarLibro_Click);
             // 
             // btnBuscarLibro
             // 

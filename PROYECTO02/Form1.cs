@@ -48,29 +48,23 @@ namespace PROYECTO02
 
         private void Acceder_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text.Trim(); // Obtener el nombre del usuario
-            string contrasena = txtPassword.Text.Trim(); // Obtener la contraseña del usuario
-            string rol = cmbUsuario.Text; // Obtener el rol seleccionado
+            string nombre = txtNombre.Text.Trim(); 
+            string contrasena = txtPassword.Text.Trim(); 
+            string rol = cmbUsuario.Text; 
 
             try
-            {
-                // Verificar las credenciales del usuario
+            {//vericación de credenciales
                 Usuario usuarioAutenticado = biblioteca.VerificarCredenciales(nombre, contrasena);
-
-                // Validar que el usuario autenticado no sea null
                 if (usuarioAutenticado != null)
                 {
-                    // Verificar que el rol del usuario autenticado coincida con el rol seleccionado
                     if (usuarioAutenticado.Rol == rol)
                     {
                         MessageBox.Show("Inicio de sesión exitoso como " + rol + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Si el rol es bibliotecario, abrir el menú de bibliotecario
                         if (rol == "Bibliotecario")
                         {
                             Menu menuForm = new Menu(biblioteca);
                             menuForm.Show();
-                            this.Hide(); // Oculta el formulario de inicio de sesión
+                            this.Hide();
                         }
                         else
                         {
@@ -89,11 +83,10 @@ namespace PROYECTO02
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message); // Mostrar mensaje de error si ocurre una excepción
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
-                // Limpiar los campos de texto
                 txtNombre.Text = "";
                 txtPassword.Text = "";
             }

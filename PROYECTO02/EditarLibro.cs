@@ -117,6 +117,7 @@ namespace PROYECTO02
                     MessageBox.Show("Libro actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridViewLibros.DataSource = null;
                     dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
+                    dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
                     LimpiarCampos();
                 }
                 catch (Exception ex)

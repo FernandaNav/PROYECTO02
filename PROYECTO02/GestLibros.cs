@@ -41,5 +41,11 @@ namespace PROYECTO02
             EditarLibro editarLibro = new EditarLibro(this.Biblioteca);
             editarLibro.Show();
         }
+
+        private void btnEliminarLibro_Click(object sender, EventArgs e)
+        {
+            EliminarLibro eliminarLibro = new EliminarLibro(this.Biblioteca);
+            eliminarLibro.Show();
+        }
     }
 }

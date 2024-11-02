@@ -93,6 +93,12 @@
     <Compile Include="EditarUsuariocs.Designer.cs">
       <DependentUpon>EditarUsuariocs.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarLibro.Designer.cs">
+      <DependentUpon>EliminarLibro.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarUsuariocs.resx">
       <DependentUpon>EditarUsuariocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarLibro.resx">
+      <DependentUpon>EliminarLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>

@@ -116,12 +116,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(247, 104);
+            this.label1.Location = new System.Drawing.Point(277, 105);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(472, 42);
+            this.label1.Size = new System.Drawing.Size(389, 42);
             this.label1.TabIndex = 37;
-            this.label1.Text = "Ingresa el nombre del usuario a editar";
+            this.label1.Text = "Ingresa el ISBN del libro a editar";
             // 
             // txtIsbnBuscar
             // 
@@ -156,7 +156,7 @@
             // 
             this.txtAutorEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtAutorEdit.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutorEdit.Location = new System.Drawing.Point(115, 140);
+            this.txtAutorEdit.Location = new System.Drawing.Point(236, 140);
             this.txtAutorEdit.Margin = new System.Windows.Forms.Padding(4);
             this.txtAutorEdit.Name = "txtAutorEdit";
             this.txtAutorEdit.Size = new System.Drawing.Size(475, 37);
@@ -168,7 +168,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(28, 135);
+            this.label6.Location = new System.Drawing.Point(149, 135);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 42);
@@ -226,7 +226,7 @@
             // 
             this.txtTituloEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtTituloEdit.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTituloEdit.Location = new System.Drawing.Point(115, 80);
+            this.txtTituloEdit.Location = new System.Drawing.Point(236, 80);
             this.txtTituloEdit.Margin = new System.Windows.Forms.Padding(4);
             this.txtTituloEdit.Name = "txtTituloEdit";
             this.txtTituloEdit.Size = new System.Drawing.Size(475, 37);
@@ -238,7 +238,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(24, 79);
+            this.label5.Location = new System.Drawing.Point(145, 79);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 42);
