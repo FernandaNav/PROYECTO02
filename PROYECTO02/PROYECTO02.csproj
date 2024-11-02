@@ -81,6 +81,12 @@
     </Compile>
     <Compile Include="Biblioteca.cs" />
     <Compile Include="Bibliotecario.cs" />
+    <Compile Include="Crear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crear.Designer.cs">
+      <DependentUpon>Crear.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarLibro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     <Compile Include="InicioB.Designer.cs">
       <DependentUpon>InicioB.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InicioL.Designer.cs">
+      <DependentUpon>InicioL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lector.cs" />
     <Compile Include="Libro.cs" />
     <Compile Include="Menu.cs">
@@ -136,6 +148,12 @@
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuLector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuLector.Designer.cs">
+      <DependentUpon>MenuLector.cs</DependentUpon>
     </Compile>
     <Compile Include="MostrarUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -154,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuario0cs.resx">
       <DependentUpon>AgregarUsuario0cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crear.resx">
+      <DependentUpon>Crear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarLibro.resx">
       <DependentUpon>EditarLibro.cs</DependentUpon>
@@ -179,8 +200,14 @@
     <EmbeddedResource Include="InicioB.resx">
       <DependentUpon>InicioB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InicioL.resx">
+      <DependentUpon>InicioL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuLector.resx">
+      <DependentUpon>MenuLector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MostrarUsuarios.resx">
       <DependentUpon>MostrarUsuarios.cs</DependentUpon>

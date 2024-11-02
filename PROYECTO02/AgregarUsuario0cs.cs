@@ -47,7 +47,7 @@ namespace PROYECTO02
                 string.IsNullOrWhiteSpace(txtPasswordNew.Text) ||
                 string.IsNullOrWhiteSpace(cmbUsuarioNew.Text))
             {
-                MessageBox.Show("Por favor, llena todos los campos antes de agregar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, llena todos los campos antes de agregar el usuario.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string nombre = txtNombreNew.Text;
@@ -86,7 +86,7 @@ namespace PROYECTO02
             {
                 dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
             }
-            MessageBox.Show("Usuario registrado exitosamente.");
+            MessageBox.Show("Usuario registrado exitosamente.","", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtNombreNew.Text = "";
             txtPasswordNew.Text = "";
             cmbUsuarioNew.SelectedIndex = -1;

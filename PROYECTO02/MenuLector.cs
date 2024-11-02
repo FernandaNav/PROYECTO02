@@ -11,24 +11,16 @@ using System.Windows.Forms;
 
 namespace PROYECTO02
 {
-    public partial class InicioB : UserControl
+    public partial class MenuLector : Form
     {
-        public InicioB()
+        private Biblioteca biblioteca;
+        public MenuLector(Biblioteca biblioteca)
         {
+            this.biblioteca = biblioteca;
             InitializeComponent();
         }
 
-        private void InicioB_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InicioB_Paint(object sender, PaintEventArgs e)
+        private void MenuLector_Paint(object sender, PaintEventArgs e)
         {
             Color colorInicio = Color.FromArgb(138, 195, 185);
             Color colorFinal = Color.FromArgb(12, 115, 109);
@@ -38,9 +30,18 @@ namespace PROYECTO02
             }
         }
 
-        private void pictureBox2_Paint(object sender, PaintEventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
+            slidePanel.Height = btnHome.Height;
+            slidePanel.Top = btnHome.Top;
+            inicioL1.BringToFront();
+        }
 
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            Form1 formLogin = new Form1(biblioteca);
+            formLogin.Show();
+            this.Hide();
         }
     }
 }

@@ -16,8 +16,16 @@ namespace PROYECTO02
 
         public Form1(Biblioteca biblioteca)
         {
+            this.biblioteca = biblioteca;
             InitializeComponent();
-            this.biblioteca = biblioteca; // Asigna la instancia pasada
+            ToolTip toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 100;
+            toolTip.ReshowDelay = 100;
+            toolTip.ShowAlways = true;
+
+            // Establecer el mensaje para el botón
+            toolTip.SetToolTip(btnCrear, "Únicamente puedes crear un usuario de rol Lector");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,13 +70,15 @@ namespace PROYECTO02
                         MessageBox.Show("Inicio de sesión exitoso como " + rol + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (rol == "Bibliotecario")
                         {
-                            Menu menuForm = new Menu(biblioteca);
-                            menuForm.Show();
+                            Menu menuB = new Menu(biblioteca);
+                            menuB.Show();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("Hola Lector");
+                            MenuLector menuL = new MenuLector(biblioteca);
+                            menuL.Show();
+                            this.Hide();
                         }
                     }
                     else
@@ -155,6 +165,12 @@ namespace PROYECTO02
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            Crear crear = new Crear(biblioteca);
+            crear.ShowDialog();
         }
     }
 }

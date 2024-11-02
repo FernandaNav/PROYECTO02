@@ -11,24 +11,14 @@ using System.Windows.Forms;
 
 namespace PROYECTO02
 {
-    public partial class InicioB : UserControl
+    public partial class InicioL : UserControl
     {
-        public InicioB()
+        public InicioL()
         {
             InitializeComponent();
         }
 
-        private void InicioB_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InicioB_Paint(object sender, PaintEventArgs e)
+        private void InicioL_Paint(object sender, PaintEventArgs e)
         {
             Color colorInicio = Color.FromArgb(138, 195, 185);
             Color colorFinal = Color.FromArgb(12, 115, 109);
@@ -36,11 +26,6 @@ namespace PROYECTO02
             {
                 e.Graphics.FillRectangle(brocha, this.ClientRectangle);
             }
-        }
-
-        private void pictureBox2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

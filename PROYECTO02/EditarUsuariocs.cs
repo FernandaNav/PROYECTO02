@@ -145,7 +145,6 @@ namespace PROYECTO02
                 try
                 {
                     biblioteca.EliminarUsuario(usuarioActual.Nombre);
-                    MessageBox.Show("Usuario eliminado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ActualizarDataGridView();
 
                     LimpiarCampos(); 

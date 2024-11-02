@@ -11,7 +11,7 @@ namespace PROYECTO02
     {
         private List<Usuario> usuarios;
         private LinkedList<Libro> libros;
-
+        public Usuario UsuarioAutenticado { get; private set; }
         public Biblioteca()
         {
             usuarios = new List<Usuario>(); //Inicializa la lista de usuarios                           
@@ -31,6 +31,11 @@ namespace PROYECTO02
 
         public void EliminarUsuario(string nombre)
         {
+            if (UsuarioAutenticado != null && UsuarioAutenticado.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("No se puede eliminar el usuario que está actualmente autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (nombre.Equals("Fernanda", StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show("No se permite eliminar al usuario Fernanda.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -75,6 +80,7 @@ namespace PROYECTO02
             var usuario = usuarios.Find(u => u.Nombre == nombre);
             if (usuario != null && usuario.Contrasena == contraseña)
             {
+                UsuarioAutenticado = usuario;
                 return usuario;
             }
             else
