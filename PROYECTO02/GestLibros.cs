@@ -35,5 +35,11 @@ namespace PROYECTO02
             AgregarLibro agregarLibro = new AgregarLibro(this.Biblioteca);
             agregarLibro.Show();
         }
+
+        private void btnEditarLibro_Click(object sender, EventArgs e)
+        {
+            EditarLibro editarLibro = new EditarLibro(this.Biblioteca);
+            editarLibro.Show();
+        }
     }
 }

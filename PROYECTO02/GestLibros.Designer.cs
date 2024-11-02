@@ -82,6 +82,7 @@
             this.btnEditarLibro.TabIndex = 13;
             this.btnEditarLibro.Text = "Editar Libro";
             this.btnEditarLibro.UseVisualStyleBackColor = false;
+            this.btnEditarLibro.Click += new System.EventHandler(this.btnEditarLibro_Click);
             // 
             // btnEliminarLibro
             // 

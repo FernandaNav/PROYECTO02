@@ -14,10 +14,10 @@ namespace PROYECTO02
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Crear una única instancia de Biblioteca
+            //Crear una única instancia de Biblioteca
             Biblioteca biblioteca = new Biblioteca();
 
-            // Pasar la instancia a Form1
+            //Pasar la instancia a Form1 para ir guardando la info
             Application.Run(new Form1(biblioteca));
         }
     }

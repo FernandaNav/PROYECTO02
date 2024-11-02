@@ -9,7 +9,7 @@ namespace PROYECTO02
     public class Usuario
     {
         public string Nombre { get; set; }
-        public string ID { get; private set; }
+        public string ID { get; set; }
         public string Contrasena { get; set; }
         public string Rol { get; set; }
 

@@ -19,6 +19,10 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            if (dataGridViewUsuarios.Columns["Contrasena"] != null)
+            {
+                dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
+            }
         }
         private void btnLimpiar1_Click(object sender, EventArgs e)
         {
@@ -43,7 +47,7 @@ namespace PROYECTO02
                 string.IsNullOrWhiteSpace(txtPasswordNew.Text) ||
                 string.IsNullOrWhiteSpace(cmbUsuarioNew.Text))
             {
-                MessageBox.Show("Por favor, llena todos los campos antes de agregar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, llena todos los campos antes de agregar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string nombre = txtNombreNew.Text;
@@ -67,7 +71,7 @@ namespace PROYECTO02
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un rol.");
+                MessageBox.Show("Por favor, seleccione un rol.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (biblioteca == null)
@@ -78,6 +82,10 @@ namespace PROYECTO02
             biblioteca.AgregarUsuario(nuevoUsuario);
             dataGridViewUsuarios.DataSource = null;
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            if (dataGridViewUsuarios.Columns["Contrasena"] != null)
+            {
+                dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
+            }
             MessageBox.Show("Usuario registrado exitosamente.");
             txtNombreNew.Text = "";
             txtPasswordNew.Text = "";

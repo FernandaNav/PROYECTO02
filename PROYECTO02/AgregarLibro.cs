@@ -19,6 +19,7 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
+            dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
         }
 
         private void AgregarLibro_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace PROYECTO02
         {
             if (string.IsNullOrWhiteSpace(txtIsbn.Text) || string.IsNullOrWhiteSpace(txtTitulo.Text) || string.IsNullOrWhiteSpace(txtAutor.Text) || string.IsNullOrWhiteSpace(txtGenero.Text))
             {
-                MessageBox.Show("Por favor, llena todos los campos antes de agregar el libro.");
+                MessageBox.Show("Por favor, llena todos los campos antes de agregar el libro.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string isbn = txtIsbn.Text.Trim();
@@ -62,7 +63,8 @@ namespace PROYECTO02
                 biblioteca.AgregarLibro(nuevoLibro);
                 dataGridViewLibros.DataSource = null;
                 dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
-                MessageBox.Show("Libro agregado exitosamente.");
+                dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+                MessageBox.Show("Libro agregado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnLimpiar_Click(sender, e);
             }
             catch (Exception ex)
@@ -79,6 +81,11 @@ namespace PROYECTO02
             {
                 e.Graphics.FillRectangle(brocha, this.ClientRectangle);
             }
+        }
+
+        private void dataGridViewLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

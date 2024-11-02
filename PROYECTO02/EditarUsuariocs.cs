@@ -23,6 +23,10 @@ namespace PROYECTO02
             btnEliminar.Visible = false;
             panEditar.Visible = false;
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            if (dataGridViewUsuarios.Columns["Contrasena"] != null)
+            {
+                dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
+            }
         }
 
         private void EditarUsuariocs_Load(object sender, EventArgs e)
@@ -43,16 +47,15 @@ namespace PROYECTO02
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string nombreBuscado = txtNombreBuscar.Text; // Nombre ingresado para buscar
+            string nombreBuscado = txtNombreBuscar.Text;
 
-            // Buscar el usuario en la biblioteca
+            //Llamar al método de buscarUsuario para buscar en la biblioteca
             usuarioActual = biblioteca.BuscarUsuario(nombreBuscado);
             if (usuarioActual != null)
             {
-                // Cargar los datos del usuario encontrado en los campos de texto
-                txtNombreEdit.Text = usuarioActual.Nombre; // Asegúrate de que la propiedad Nombre existe
-                txtPasswordEdit.Text = usuarioActual.Contrasena; // Asegúrate de que la propiedad Contrasena existe
-                cmbRolEdit.SelectedItem = usuarioActual.Rol; // Asegúrate de que la propiedad Rol existe
+                txtNombreEdit.Text = usuarioActual.Nombre; 
+                txtPasswordEdit.Text = usuarioActual.Contrasena;
+                cmbRolEdit.SelectedItem = usuarioActual.Rol; 
                 MessageBox.Show("Usuario encontrado. Puede editar o eliminar los datos.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 panEditar.Visible = true;
@@ -86,17 +89,21 @@ namespace PROYECTO02
             string nuevaContraseña = txtPasswordEdit.Text;
             string nuevoRol = cmbRolEdit.SelectedItem.ToString();
 
-            try
+            DialogResult result = MessageBox.Show($"¿Está seguro de que desea editar al usuario '{usuarioActual.Nombre}'?", "Confirmar Edición", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                biblioteca.EditarUsuario(usuarioActual.Nombre, nuevoNombre, nuevaContraseña, nuevoRol);
-                usuarioActual.Nombre = nuevoNombre;
-                MessageBox.Show("Usuario actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ActualizarDataGridView();
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    biblioteca.EditarUsuario(usuarioActual.Nombre, nuevoNombre, nuevaContraseña, nuevoRol);
+                    usuarioActual.Nombre = nuevoNombre;
+                    MessageBox.Show("Usuario actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ActualizarDataGridView();
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void LimpiarCampos()
@@ -114,6 +121,10 @@ namespace PROYECTO02
         {
             dataGridViewUsuarios.DataSource = null; 
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            if (dataGridViewUsuarios.Columns["Contrasena"] != null)
+            {
+                dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
+            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -144,6 +155,21 @@ namespace PROYECTO02
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void txtNombreBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panEditar_Paint(object sender, PaintEventArgs e)
+        {
+            BackColor = TransparencyKey;
         }
     }
 }

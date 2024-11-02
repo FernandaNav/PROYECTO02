@@ -43,10 +43,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Poppins Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(413, 426);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(559, 512);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(275, 48);
+            this.label7.Size = new System.Drawing.Size(340, 58);
             this.label7.TabIndex = 13;
             this.label7.Text = "¡Explora y gestiona!";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -57,10 +56,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins Light", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(337, 328);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(457, 392);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(356, 96);
+            this.label6.Size = new System.Drawing.Size(440, 116);
             this.label6.TabIndex = 12;
             this.label6.Text = "Tu misión es mantener la\r\nmagia de la lectura viva.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -71,10 +69,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(445, 116);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(601, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(291, 130);
+            this.label4.Size = new System.Drawing.Size(362, 162);
             this.label4.TabIndex = 9;
             this.label4.Text = "¡Hola,";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -86,10 +83,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins Black", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(157, 222);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(217, 261);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(588, 130);
+            this.label5.Size = new System.Drawing.Size(733, 162);
             this.label5.TabIndex = 11;
             this.label5.Text = "Bibliotecario!";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,17 +94,17 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(158, 328);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(219, 392);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(200, 146);
+            this.pictureBox2.Size = new System.Drawing.Size(267, 180);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
             // InicioB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
             this.Controls.Add(this.label7);
@@ -116,9 +112,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InicioB";
-            this.Size = new System.Drawing.Size(736, 504);
+            this.Size = new System.Drawing.Size(981, 620);
             this.Load += new System.EventHandler(this.InicioB_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.InicioB_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

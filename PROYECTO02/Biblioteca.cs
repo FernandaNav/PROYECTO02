@@ -92,7 +92,7 @@ namespace PROYECTO02
             }
             libros.AddLast(libro);
         }
-        public void EditarLibro(string isbn, string nuevoTitulo, string nuevoAutor, string nuevoGenero, bool nuevaDisponibilidad)
+        public void EditarLibro(string isbn, string nuevoTitulo, string nuevoAutor, string nuevoGenero)
         {
             var libro = BuscarLibroPorISBN(isbn);
             if (libro != null)
@@ -100,7 +100,6 @@ namespace PROYECTO02
                 libro.Titulo = nuevoTitulo;
                 libro.Autor = nuevoAutor;
                 libro.Genero = nuevoGenero;
-                libro.Disponible = nuevaDisponibilidad;
             }
             else
             {

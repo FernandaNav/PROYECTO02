@@ -175,11 +175,11 @@
             // 
             this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuarios.Location = new System.Drawing.Point(176, 462);
+            this.dataGridViewUsuarios.Location = new System.Drawing.Point(248, 449);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             this.dataGridViewUsuarios.RowHeadersWidth = 51;
             this.dataGridViewUsuarios.RowTemplate.Height = 24;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(607, 186);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(468, 186);
             this.dataGridViewUsuarios.TabIndex = 29;
             this.dataGridViewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellContentClick);
             // 
