@@ -44,6 +44,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnDevolver = new System.Windows.Forms.Button();
+            this.btnDeshacer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,6 +126,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.btnDeshacer);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.logOut);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -149,7 +151,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(38, 22);
+            this.label4.Location = new System.Drawing.Point(15, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 36);
             this.label4.TabIndex = 9;
@@ -263,6 +265,27 @@
             this.btnDevolver.UseVisualStyleBackColor = true;
             this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
+            // btnDeshacer
+            // 
+            this.btnDeshacer.FlatAppearance.BorderSize = 0;
+            this.btnDeshacer.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnDeshacer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.btnDeshacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeshacer.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeshacer.ForeColor = System.Drawing.Color.White;
+            this.btnDeshacer.Image = ((System.Drawing.Image)(resources.GetObject("btnDeshacer.Image")));
+            this.btnDeshacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeshacer.Location = new System.Drawing.Point(578, 5);
+            this.btnDeshacer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeshacer.Name = "btnDeshacer";
+            this.btnDeshacer.Size = new System.Drawing.Size(173, 71);
+            this.btnDeshacer.TabIndex = 10;
+            this.btnDeshacer.Text = "  Deshacer";
+            this.btnDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeshacer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeshacer.UseVisualStyleBackColor = true;
+            this.btnDeshacer.Click += new System.EventHandler(this.btnDeshacer_Click);
+            // 
             // MenuLector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,5 +328,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private InicioL inicioL1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDeshacer;
     }
 }

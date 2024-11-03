@@ -178,6 +178,12 @@ namespace PROYECTO02
                 MessageBox.Show("El libro no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            var prestamoExistente = prestamosActivos.FirstOrDefault(p => p.Libro.ISBN == isbn && p.Usuario.Equals(UsuarioAutenticado));
+            if (prestamoExistente != null)
+            {
+                MessageBox.Show($"Ya tienes el libro '{libro.Titulo}' prestado.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (libro.Disponible)
             {
@@ -185,12 +191,12 @@ namespace PROYECTO02
                 prestamosActivos.AddLast(prestamo);
                 libro.Disponible = false;
                 pilaAcciones.AddLast($"Préstamo de '{libro.Titulo}' para '{UsuarioAutenticado.Nombre}'");
-                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.FechaPrestamo}.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.FechaPrestamo}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 colaEspera.AddLast(UsuarioAutenticado);
-                MessageBox.Show($"El libro '{libro.Titulo}' no está disponible. Se le ha agregado a la lista de espera.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El libro '{libro.Titulo}' no está disponible. Se le ha agregado a la lista de espera.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public void DevolverLibro(string isbn)
@@ -209,11 +215,11 @@ namespace PROYECTO02
                     SolicitarPrestamo(libro.ISBN);
                 }
 
-                MessageBox.Show($"Libro devuelto: '{libro.Titulo}'.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Libro devuelto: '{libro.Titulo}'.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("El libro no está en la lista de préstamos del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No has prestado este libro.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         public void DeshacerAccion()
@@ -221,7 +227,7 @@ namespace PROYECTO02
             var ultimaAccion = pilaAcciones.Last?.Value;
             if (ultimaAccion == null)
             {
-                MessageBox.Show("No hay acciones para deshacer.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No hay acciones para deshacer.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (ultimaAccion.StartsWith("Préstamo de"))
@@ -263,10 +269,14 @@ namespace PROYECTO02
             }
             else
             {
-                MessageBox.Show("Acción desconocida para deshacer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Acción desconocida para deshacer.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             pilaAcciones.RemoveLast();
+        }
+        public bool PilaVacia()
+        {
+            return pilaAcciones.Count == 0;
         }
         public List<Prestamos> ObtenerPrestamosActivos()
         {

@@ -21,6 +21,8 @@ namespace PROYECTO02
             slidePanel.Height = btnHome.Height;
             inicioL1.BringToFront();
             label4.Text = $"        {biblioteca.UsuarioAutenticado.Nombre}";
+            if (biblioteca.PilaVacia())
+                btnDeshacer.Visible = false;
         }
 
         private void MenuLector_Paint(object sender, PaintEventArgs e)
@@ -68,6 +70,11 @@ namespace PROYECTO02
         {
             slidePanel.Height = btnBuscar.Height;
             slidePanel.Top = btnBuscar.Top;
+        }
+
+        private void btnDeshacer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
