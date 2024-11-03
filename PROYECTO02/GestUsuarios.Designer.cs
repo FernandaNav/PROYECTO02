@@ -42,7 +42,7 @@
             this.btnOpAgregarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpAgregarU.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpAgregarU.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOpAgregarU.Location = new System.Drawing.Point(312, 258);
+            this.btnOpAgregarU.Location = new System.Drawing.Point(313, 246);
             this.btnOpAgregarU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOpAgregarU.Name = "btnOpAgregarU";
             this.btnOpAgregarU.Size = new System.Drawing.Size(329, 91);
@@ -60,7 +60,7 @@
             this.btnOpEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpEditarUsuario.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpEditarUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOpEditarUsuario.Location = new System.Drawing.Point(312, 385);
+            this.btnOpEditarUsuario.Location = new System.Drawing.Point(313, 373);
             this.btnOpEditarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOpEditarUsuario.Name = "btnOpEditarUsuario";
             this.btnOpEditarUsuario.Size = new System.Drawing.Size(329, 91);
@@ -74,8 +74,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(194, 133);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(73)))));
+            this.label4.Location = new System.Drawing.Point(195, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(554, 106);
             this.label4.TabIndex = 10;

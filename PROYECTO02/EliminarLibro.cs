@@ -22,6 +22,13 @@ namespace PROYECTO02
             btnEliminar.Visible = false;
             dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
             dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+            dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
+            dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewLibros.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);
+            dataGridViewLibros.DefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 178, 170);
+            dataGridViewLibros.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridViewLibros.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridViewLibros.EnableHeadersVisualStyles = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -91,6 +98,10 @@ namespace PROYECTO02
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void dataGridViewLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

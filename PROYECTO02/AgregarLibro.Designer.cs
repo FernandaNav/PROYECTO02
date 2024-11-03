@@ -37,8 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.btnAutor = new System.Windows.Forms.Label();
-            this.txtDisponibilidad = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -69,7 +67,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(73)))));
             this.label4.Location = new System.Drawing.Point(244, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(483, 106);
@@ -79,9 +77,9 @@
             // 
             // dataGridViewLibros
             // 
-            this.dataGridViewLibros.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewLibros.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLibros.Location = new System.Drawing.Point(127, 472);
+            this.dataGridViewLibros.Location = new System.Drawing.Point(124, 430);
             this.dataGridViewLibros.Name = "dataGridViewLibros";
             this.dataGridViewLibros.RowHeadersWidth = 51;
             this.dataGridViewLibros.RowTemplate.Height = 24;
@@ -93,10 +91,10 @@
             // 
             this.txtTitulo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtTitulo.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(340, 242);
+            this.txtTitulo.Location = new System.Drawing.Point(566, 171);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(424, 37);
+            this.txtTitulo.Size = new System.Drawing.Size(291, 37);
             this.txtTitulo.TabIndex = 35;
             // 
             // label2
@@ -105,7 +103,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(249, 241);
+            this.label2.Location = new System.Drawing.Point(485, 169);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 42);
@@ -116,7 +114,7 @@
             // 
             this.txtIsbn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtIsbn.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIsbn.Location = new System.Drawing.Point(174, 163);
+            this.txtIsbn.Location = new System.Drawing.Point(174, 174);
             this.txtIsbn.Margin = new System.Windows.Forms.Padding(4);
             this.txtIsbn.Name = "txtIsbn";
             this.txtIsbn.Size = new System.Drawing.Size(291, 37);
@@ -128,7 +126,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(102, 160);
+            this.label3.Location = new System.Drawing.Point(102, 171);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 42);
@@ -139,7 +137,7 @@
             // 
             this.txtGenero.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtGenero.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenero.Location = new System.Drawing.Point(588, 160);
+            this.txtGenero.Location = new System.Drawing.Point(174, 259);
             this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(291, 37);
@@ -151,46 +149,21 @@
             this.btnAutor.BackColor = System.Drawing.Color.Transparent;
             this.btnAutor.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutor.ForeColor = System.Drawing.Color.White;
-            this.btnAutor.Location = new System.Drawing.Point(473, 158);
+            this.btnAutor.Location = new System.Drawing.Point(63, 258);
             this.btnAutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnAutor.Name = "btnAutor";
             this.btnAutor.Size = new System.Drawing.Size(110, 42);
             this.btnAutor.TabIndex = 40;
             this.btnAutor.Text = "Género:";
             // 
-            // txtDisponibilidad
-            // 
-            this.txtDisponibilidad.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDisponibilidad.Enabled = false;
-            this.txtDisponibilidad.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDisponibilidad.Location = new System.Drawing.Point(642, 319);
-            this.txtDisponibilidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDisponibilidad.Name = "txtDisponibilidad";
-            this.txtDisponibilidad.Size = new System.Drawing.Size(237, 37);
-            this.txtDisponibilidad.TabIndex = 45;
-            this.txtDisponibilidad.Text = "Disponible";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(448, 318);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 42);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Disponibilidad:";
-            // 
             // txtAutor
             // 
             this.txtAutor.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtAutor.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutor.Location = new System.Drawing.Point(174, 319);
+            this.txtAutor.Location = new System.Drawing.Point(566, 258);
             this.txtAutor.Margin = new System.Windows.Forms.Padding(4);
             this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(261, 37);
+            this.txtAutor.Size = new System.Drawing.Size(291, 37);
             this.txtAutor.TabIndex = 43;
             // 
             // label6
@@ -199,7 +172,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(87, 314);
+            this.label6.Location = new System.Drawing.Point(482, 258);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 42);
@@ -215,7 +188,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.Location = new System.Drawing.Point(566, 391);
+            this.btnLimpiar.Location = new System.Drawing.Point(566, 332);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(161, 60);
@@ -233,7 +206,7 @@
             this.btnAgregarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarUser.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAgregarUser.Location = new System.Drawing.Point(262, 391);
+            this.btnAgregarUser.Location = new System.Drawing.Point(262, 332);
             this.btnAgregarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarUser.Name = "btnAgregarUser";
             this.btnAgregarUser.Size = new System.Drawing.Size(161, 60);
@@ -250,8 +223,6 @@
             this.ClientSize = new System.Drawing.Size(983, 691);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnAgregarUser);
-            this.Controls.Add(this.txtDisponibilidad);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtGenero);
@@ -286,8 +257,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.Label btnAutor;
-        private System.Windows.Forms.TextBox txtDisponibilidad;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnLimpiar;

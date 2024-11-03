@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +11,16 @@ using System.Windows.Forms;
 
 namespace PROYECTO02
 {
-    public partial class SolicitarPrestamo : UserControl
+    public partial class DevolverLibro : UserControl
     {
         public Biblioteca Biblioteca { get; set; }
-        public SolicitarPrestamo(Biblioteca biblioteca)
+        public DevolverLibro(Biblioteca biblioteca)
         {
             this.Biblioteca = biblioteca;
             InitializeComponent();
         }
 
-        private void SolicitarPrestamo_Paint(object sender, PaintEventArgs e)
+        private void DevolverLibro_Paint(object sender, PaintEventArgs e)
         {
             Color colorInicio = Color.FromArgb(138, 195, 185);
             Color colorFinal = Color.FromArgb(12, 115, 109);
@@ -41,31 +40,12 @@ namespace PROYECTO02
             }
             try
             {
-                Biblioteca.SolicitarPrestamo(isbn);
+                Biblioteca.DevolverLibro(isbn);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtIsbnBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

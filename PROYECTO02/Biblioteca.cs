@@ -12,7 +12,7 @@ namespace PROYECTO02
         private List<Usuario> usuarios;
         private LinkedList<Libro> libros;
         private LinkedList<Prestamos> prestamosActivos;
-        private LinkedList<string> pilaAcciones;
+        private LinkedList<Accion> pilaAcciones;
         private LinkedList<Usuario> colaEspera;
 
         public Usuario UsuarioAutenticado { get; private set; }
@@ -22,8 +22,8 @@ namespace PROYECTO02
             usuarios.Add(new Bibliotecario("Fernanda", "chuchu"));
             libros = new LinkedList<Libro>();
             prestamosActivos = new LinkedList<Prestamos>();
-            pilaAcciones = new LinkedList<string>();
             colaEspera = new LinkedList<Usuario>();
+            pilaAcciones = new LinkedList<Accion>();
         }
         //MÉTODOS PARA USUARIOS
         public void AgregarUsuario(Usuario usuario)
@@ -190,8 +190,10 @@ namespace PROYECTO02
                 var prestamo = new Prestamos(libro, UsuarioAutenticado);
                 prestamosActivos.AddLast(prestamo);
                 libro.Disponible = false;
-                pilaAcciones.AddLast($"Préstamo de '{libro.Titulo}' para '{UsuarioAutenticado.Nombre}'");
-                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.FechaPrestamo}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var accion = new Accion("Préstamo", libro, UsuarioAutenticado);
+                pilaAcciones.AddLast(accion);
+
+                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.FechaPrestamoFormateada}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -207,15 +209,22 @@ namespace PROYECTO02
                 prestamosActivos.Remove(prestamo);
                 var libro = prestamo.Libro;
                 libro.Disponible = true;
-                pilaAcciones.AddLast($"Devolución de '{libro.Titulo}' para '{UsuarioAutenticado.Nombre}'");
+                var accion = new Accion("Devolución", libro, UsuarioAutenticado);
+                pilaAcciones.AddLast(accion);
                 if (colaEspera.Count > 0)
                 {
                     var siguienteUsuario = colaEspera.First.Value;
                     colaEspera.RemoveFirst();
-                    SolicitarPrestamo(libro.ISBN);
+                    var nuevoPrestamo = new Prestamos(libro, siguienteUsuario);
+                    prestamosActivos.AddLast(nuevoPrestamo); 
+                    libro.Disponible = false; 
+                    var accionPrestamo = new Accion("Préstamo", libro, siguienteUsuario); 
+                    pilaAcciones.AddLast(accionPrestamo); 
+
+                    MessageBox.Show($"El libro '{libro.Titulo}' ha sido asignado a '{siguienteUsuario.Nombre}'.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                MessageBox.Show($"Libro devuelto: '{libro.Titulo}'.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Libro devuelto: '{libro.Titulo}' el {prestamo.FechaDevolucionFormateada}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -224,55 +233,40 @@ namespace PROYECTO02
         }
         public void DeshacerAccion()
         {
-            var ultimaAccion = pilaAcciones.Last?.Value;
-            if (ultimaAccion == null)
+            if (pilaAcciones.Count == 0)
             {
                 MessageBox.Show("No hay acciones para deshacer.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (ultimaAccion.StartsWith("Préstamo de"))
+            var ultimaAccion = pilaAcciones.Last.Value;
+            if (!ultimaAccion.Usuario.Equals(UsuarioAutenticado))
             {
-                var partes = ultimaAccion.Split(' ');
-                var libroTitulo = partes[2]; 
-                var usuarioNombre = partes[4]; 
+                MessageBox.Show("No hay acciones para deshacer", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            pilaAcciones.RemoveLast();
 
-                var libro = BuscarLibroPorTitulo(libroTitulo);
-                var usuario = BuscarUsuario(usuarioNombre);
-
-                if (libro != null && usuario != null)
+            if (ultimaAccion.Tipo == "Préstamo")
+            {
+                ultimaAccion.Libro.Disponible = true;
+                var prestamo = prestamosActivos.FirstOrDefault(p => p.Libro.ISBN == ultimaAccion.Libro.ISBN && p.Usuario.Equals(ultimaAccion.Usuario));
+                if (prestamo != null)
                 {
-                    libro.Disponible = true;
-                    var prestamo = prestamosActivos.FirstOrDefault(p => p.Libro.ISBN == libro.ISBN && p.Usuario.Equals(usuario));
-                    if (prestamo != null)
-                    {
-                        prestamosActivos.Remove(prestamo);
-                    }
-                    MessageBox.Show($"Se ha deshecho el préstamo de '{libroTitulo}' para '{usuarioNombre}'.", "Acción Deshecha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    prestamosActivos.Remove(prestamo);
+                    MessageBox.Show($"Se ha deshecho el préstamo de '{ultimaAccion.Libro.Titulo}' para '{ultimaAccion.Usuario.Nombre}'.", "Acción Deshecha", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else if (ultimaAccion.StartsWith("Devolución de"))
+            else if (ultimaAccion.Tipo == "Devolución")
             {
-                var partes = ultimaAccion.Split(' ');
-                var libroTitulo = partes[2];
-                var usuarioNombre = partes[4];
-
-                var libro = BuscarLibroPorTitulo(libroTitulo);
-                var usuario = BuscarUsuario(usuarioNombre);
-
-                if (libro != null && usuario != null)
-                {
-                    libro.Disponible = false;
-                    var nuevoPrestamo = new Prestamos(libro, usuario);
-                    prestamosActivos.AddLast(nuevoPrestamo);
-                    MessageBox.Show($"Se ha deshecho la devolución de '{libroTitulo}' para '{usuarioNombre}'.", "Acción Deshecha", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                ultimaAccion.Libro.Disponible = false;
+                var nuevoPrestamo = new Prestamos(ultimaAccion.Libro, ultimaAccion.Usuario);
+                prestamosActivos.AddLast(nuevoPrestamo);
+                MessageBox.Show($"Se ha deshecho la devolución de '{ultimaAccion.Libro.Titulo}' para '{ultimaAccion.Usuario.Nombre}'.", "Acción Deshecha", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Acción desconocida para deshacer.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            pilaAcciones.RemoveLast();
         }
         public bool PilaVacia()
         {

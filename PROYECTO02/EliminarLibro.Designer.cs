@@ -61,7 +61,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(73)))));
             this.label4.Location = new System.Drawing.Point(243, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(477, 106);
@@ -112,7 +112,7 @@
             // 
             // dataGridViewLibros
             // 
-            this.dataGridViewLibros.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewLibros.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLibros.Location = new System.Drawing.Point(115, 404);
             this.dataGridViewLibros.Name = "dataGridViewLibros";
@@ -120,6 +120,7 @@
             this.dataGridViewLibros.RowTemplate.Height = 24;
             this.dataGridViewLibros.Size = new System.Drawing.Size(733, 236);
             this.dataGridViewLibros.TabIndex = 42;
+            this.dataGridViewLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibros_CellContentClick);
             // 
             // btnEliminar
             // 

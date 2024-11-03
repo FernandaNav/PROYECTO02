@@ -77,7 +77,8 @@ namespace PROYECTO02
             biblioteca.AgregarUsuario(nuevoUsuario);
             MessageBox.Show("Usuario registrado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtNombre.Text = string.Empty;
-            txtPassword.Text = string.Empty; ;
+            txtPassword.Text = string.Empty;
+            this.Hide();
 
         }
 

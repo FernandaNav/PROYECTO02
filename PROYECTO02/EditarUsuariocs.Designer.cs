@@ -54,8 +54,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(111, 48);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(73)))));
+            this.label4.Location = new System.Drawing.Point(97, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(779, 106);
             this.label4.TabIndex = 21;
@@ -161,7 +161,7 @@
             // 
             // dataGridViewUsuarios
             // 
-            this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsuarios.Location = new System.Drawing.Point(242, 498);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
@@ -169,6 +169,7 @@
             this.dataGridViewUsuarios.RowTemplate.Height = 24;
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(468, 156);
             this.dataGridViewUsuarios.TabIndex = 45;
+            this.dataGridViewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellContentClick);
             // 
             // txtNombreEdit
             // 

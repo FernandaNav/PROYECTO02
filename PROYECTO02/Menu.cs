@@ -84,5 +84,16 @@ namespace PROYECTO02
         {
             
         }
+
+        private void btnInformes_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnInformes.Height;
+            slidePanel.Top = btnInformes.Top;
+            GenerarInformes generarInformes = new GenerarInformes(this.biblioteca);
+            generarInformes.Biblioteca = biblioteca;
+            this.Controls.Add(generarInformes);
+            generarInformes.BringToFront();
+            generarInformes.Location = new System.Drawing.Point(265, 68);
+        }
     }
 }

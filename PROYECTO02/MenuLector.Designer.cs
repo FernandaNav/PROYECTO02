@@ -34,21 +34,21 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.inicioL1 = new PROYECTO02.InicioL();
-            this.label4 = new System.Windows.Forms.Label();
-            this.logOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnDevolver = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnDeshacer = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Button();
+            this.inicioL1 = new PROYECTO02.InicioL();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,72 +112,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Estante";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(184, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 53);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Gatuno";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
-            this.panel2.Controls.Add(this.btnDeshacer);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.logOut);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(356, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(981, 83);
-            this.panel2.TabIndex = 1;
-            // 
-            // inicioL1
-            // 
-            this.inicioL1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
-            this.inicioL1.Location = new System.Drawing.Point(356, 81);
-            this.inicioL1.Name = "inicioL1";
-            this.inicioL1.Size = new System.Drawing.Size(981, 623);
-            this.inicioL1.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Poppins Light", 12F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(15, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 36);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "        ";
-            // 
-            // logOut
-            // 
-            this.logOut.FlatAppearance.BorderSize = 0;
-            this.logOut.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.logOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
-            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logOut.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOut.ForeColor = System.Drawing.Color.White;
-            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
-            this.logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logOut.Location = new System.Drawing.Point(757, 5);
-            this.logOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(221, 71);
-            this.logOut.TabIndex = 8;
-            this.logOut.Text = "  Cerrar Sesión";
-            this.logOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.logOut.UseVisualStyleBackColor = true;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -188,6 +122,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(184, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 53);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Gatuno";
             // 
             // btnBuscar
             // 
@@ -265,6 +210,18 @@
             this.btnDevolver.UseVisualStyleBackColor = true;
             this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.btnDeshacer);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.logOut);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(356, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(981, 83);
+            this.panel2.TabIndex = 1;
+            // 
             // btnDeshacer
             // 
             this.btnDeshacer.FlatAppearance.BorderSize = 0;
@@ -275,16 +232,60 @@
             this.btnDeshacer.ForeColor = System.Drawing.Color.White;
             this.btnDeshacer.Image = ((System.Drawing.Image)(resources.GetObject("btnDeshacer.Image")));
             this.btnDeshacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeshacer.Location = new System.Drawing.Point(578, 5);
+            this.btnDeshacer.Location = new System.Drawing.Point(546, 5);
             this.btnDeshacer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeshacer.Name = "btnDeshacer";
-            this.btnDeshacer.Size = new System.Drawing.Size(173, 71);
+            this.btnDeshacer.Size = new System.Drawing.Size(205, 71);
             this.btnDeshacer.TabIndex = 10;
             this.btnDeshacer.Text = "  Deshacer";
             this.btnDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeshacer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeshacer.UseVisualStyleBackColor = true;
             this.btnDeshacer.Click += new System.EventHandler(this.btnDeshacer_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(15, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 36);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "        ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // logOut
+            // 
+            this.logOut.FlatAppearance.BorderSize = 0;
+            this.logOut.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.logOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOut.ForeColor = System.Drawing.Color.White;
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOut.Location = new System.Drawing.Point(757, 5);
+            this.logOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(221, 71);
+            this.logOut.TabIndex = 8;
+            this.logOut.Text = "  Cerrar Sesión";
+            this.logOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.logOut.UseVisualStyleBackColor = true;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
+            // inicioL1
+            // 
+            this.inicioL1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
+            this.inicioL1.Location = new System.Drawing.Point(356, 81);
+            this.inicioL1.Name = "inicioL1";
+            this.inicioL1.Size = new System.Drawing.Size(981, 623);
+            this.inicioL1.TabIndex = 2;
             // 
             // MenuLector
             // 
@@ -304,9 +305,9 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

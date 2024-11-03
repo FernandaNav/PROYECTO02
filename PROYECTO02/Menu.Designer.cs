@@ -33,22 +33,22 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.slidePanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.logOut = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnInformes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnLibros = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Button();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.inicioB2 = new PROYECTO02.InicioB();
             this.panelOpBibliotecario.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelOpBibliotecario
@@ -104,6 +104,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Estante";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(36, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 108);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -125,51 +136,6 @@
             this.slidePanel.TabIndex = 6;
             this.slidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.logOut);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(356, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(981, 78);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // logOut
-            // 
-            this.logOut.FlatAppearance.BorderSize = 0;
-            this.logOut.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.logOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
-            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logOut.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOut.ForeColor = System.Drawing.Color.White;
-            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
-            this.logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logOut.Location = new System.Drawing.Point(757, 2);
-            this.logOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(221, 71);
-            this.logOut.TabIndex = 7;
-            this.logOut.Text = "  Cerrar Sesión";
-            this.logOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.logOut.UseVisualStyleBackColor = true;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 108);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnInformes
             // 
             this.btnInformes.FlatAppearance.BorderSize = 0;
@@ -187,6 +153,7 @@
             this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // btnUsuarios
             // 
@@ -245,6 +212,19 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.logOut);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(356, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(981, 78);
+            this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -253,11 +233,33 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(39, 19);
+            this.label4.Location = new System.Drawing.Point(15, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 36);
             this.label4.TabIndex = 5;
             this.label4.Text = "        ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // logOut
+            // 
+            this.logOut.FlatAppearance.BorderSize = 0;
+            this.logOut.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.logOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOut.ForeColor = System.Drawing.Color.White;
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOut.Location = new System.Drawing.Point(757, 2);
+            this.logOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(221, 71);
+            this.logOut.TabIndex = 7;
+            this.logOut.Text = "  Cerrar Sesión";
+            this.logOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.logOut.UseVisualStyleBackColor = true;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // inicioB2
             // 
@@ -287,9 +289,9 @@
             this.panelOpBibliotecario.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

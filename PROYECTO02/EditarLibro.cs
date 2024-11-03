@@ -22,6 +22,13 @@ namespace PROYECTO02
             panEditar.Visible = false;
             dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
             dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+            dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
+            dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewLibros.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);
+            dataGridViewLibros.DefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 178, 170);
+            dataGridViewLibros.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridViewLibros.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridViewLibros.EnableHeadersVisualStyles = false;
         }
 
         private void EditarLibro_Load(object sender, EventArgs e)
@@ -32,7 +39,7 @@ namespace PROYECTO02
 
         private void dataGridViewLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -41,7 +48,6 @@ namespace PROYECTO02
             libroActual = biblioteca.BuscarLibroPorISBN(isbnBuscado);
             if (libroActual != null)
             {
-                txtIsbn.Text = libroActual.ISBN;
                 txtGeneroEdit.Text = libroActual.Genero;
                 txtAutorEdit.Text  = libroActual.Autor;
                 txtTituloEdit.Text = libroActual.Titulo;
@@ -115,6 +121,8 @@ namespace PROYECTO02
                 {
                     biblioteca.EditarLibro(isbn, nuevoTitulo, nuevoAutor, nuevoGenero);
                     MessageBox.Show("Libro actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIsbnBuscar.Text = string.Empty;
+                    panEditar.Visible = false;
                     dataGridViewLibros.DataSource = null;
                     dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
                     dataGridViewLibros.Columns["Disponible"].ReadOnly = true;

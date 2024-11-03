@@ -69,7 +69,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(601, 131);
+            this.label4.Location = new System.Drawing.Point(563, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(362, 162);
             this.label4.TabIndex = 9;
@@ -83,7 +83,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins Black", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(217, 261);
+            this.label5.Location = new System.Drawing.Point(192, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(733, 162);
             this.label5.TabIndex = 11;

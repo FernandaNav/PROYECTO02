@@ -21,8 +21,6 @@ namespace PROYECTO02
             slidePanel.Height = btnHome.Height;
             inicioL1.BringToFront();
             label4.Text = $"        {biblioteca.UsuarioAutenticado.Nombre}";
-            if (biblioteca.PilaVacia())
-                btnDeshacer.Visible = false;
         }
 
         private void MenuLector_Paint(object sender, PaintEventArgs e)
@@ -64,6 +62,11 @@ namespace PROYECTO02
         {
             slidePanel.Height = btnDevolver.Height;
             slidePanel.Top = btnDevolver.Top;
+            DevolverLibro devolverLibro = new DevolverLibro(this.biblioteca);
+            devolverLibro.Biblioteca = biblioteca;
+            this.Controls.Add(devolverLibro);
+            devolverLibro.BringToFront();
+            devolverLibro.Location = new System.Drawing.Point(265, 68);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace PROYECTO02
 
         private void btnDeshacer_Click(object sender, EventArgs e)
         {
-
+            biblioteca.DeshacerAccion();
         }
     }
 }

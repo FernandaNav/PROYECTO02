@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accion.cs" />
     <Compile Include="AgregarLibro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,12 @@
     </Compile>
     <Compile Include="Crear.Designer.cs">
       <DependentUpon>Crear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevolverLibro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DevolverLibro.Designer.cs">
+      <DependentUpon>DevolverLibro.cs</DependentUpon>
     </Compile>
     <Compile Include="EditarLibro.cs">
       <SubType>Form</SubType>
@@ -117,6 +124,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarInformes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenerarInformes.Designer.cs">
+      <DependentUpon>GenerarInformes.cs</DependentUpon>
     </Compile>
     <Compile Include="GestLibros.cs">
       <SubType>UserControl</SubType>
@@ -179,6 +192,12 @@
       <DependentUpon>SolicitudPrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="VerPrestamosActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerPrestamosActivos.Designer.cs">
+      <DependentUpon>VerPrestamosActivos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarLibro.resx">
       <DependentUpon>AgregarLibro.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Crear.resx">
       <DependentUpon>Crear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevolverLibro.resx">
+      <DependentUpon>DevolverLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarLibro.resx">
       <DependentUpon>EditarLibro.cs</DependentUpon>
@@ -205,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarInformes.resx">
+      <DependentUpon>GenerarInformes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestLibros.resx">
       <DependentUpon>GestLibros.cs</DependentUpon>
@@ -242,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SolicitudPrestamos.resx">
       <DependentUpon>SolicitudPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerPrestamosActivos.resx">
+      <DependentUpon>VerPrestamosActivos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

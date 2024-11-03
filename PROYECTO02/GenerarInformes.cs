@@ -11,14 +11,21 @@ using System.Windows.Forms;
 
 namespace PROYECTO02
 {
-    public partial class InicioL : UserControl
+    public partial class GenerarInformes : UserControl
     {
-        public InicioL()
+        public Biblioteca Biblioteca { get; set; }
+        public GenerarInformes(Biblioteca biblioteca)
         {
+            this.Biblioteca = biblioteca;
             InitializeComponent();
         }
 
-        private void InicioL_Paint(object sender, PaintEventArgs e)
+        private void btnOpAgregarU_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void GenerarInformes_Paint(object sender, PaintEventArgs e)
         {
             Color colorInicio = Color.FromArgb(138, 195, 185);
             Color colorFinal = Color.FromArgb(12, 115, 109);
@@ -28,7 +35,15 @@ namespace PROYECTO02
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void dataGridPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void CargarPrestamosActivos()
+        {
+        }
+
+        private void btnLibrosSolicitados_Click(object sender, EventArgs e)
         {
 
         }

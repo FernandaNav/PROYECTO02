@@ -51,7 +51,7 @@
             this.btnLimpiar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar1.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar1.Location = new System.Drawing.Point(597, 359);
+            this.btnLimpiar1.Location = new System.Drawing.Point(622, 359);
             this.btnLimpiar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar1.Name = "btnLimpiar1";
             this.btnLimpiar1.Size = new System.Drawing.Size(161, 60);
@@ -86,10 +86,10 @@
             this.cmbUsuarioNew.Items.AddRange(new object[] {
             "Bibliotecario",
             "Lector"});
-            this.cmbUsuarioNew.Location = new System.Drawing.Point(344, 270);
+            this.cmbUsuarioNew.Location = new System.Drawing.Point(354, 270);
             this.cmbUsuarioNew.Margin = new System.Windows.Forms.Padding(4);
             this.cmbUsuarioNew.Name = "cmbUsuarioNew";
-            this.cmbUsuarioNew.Size = new System.Drawing.Size(424, 44);
+            this.cmbUsuarioNew.Size = new System.Drawing.Size(414, 44);
             this.cmbUsuarioNew.TabIndex = 26;
             this.cmbUsuarioNew.SelectedIndexChanged += new System.EventHandler(this.cmbUsuarioNew_SelectedIndexChanged);
             // 
@@ -97,10 +97,10 @@
             // 
             this.txtPasswordNew.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtPasswordNew.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasswordNew.Location = new System.Drawing.Point(344, 212);
+            this.txtPasswordNew.Location = new System.Drawing.Point(354, 212);
             this.txtPasswordNew.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordNew.Name = "txtPasswordNew";
-            this.txtPasswordNew.Size = new System.Drawing.Size(424, 37);
+            this.txtPasswordNew.Size = new System.Drawing.Size(414, 37);
             this.txtPasswordNew.TabIndex = 25;
             this.txtPasswordNew.TextChanged += new System.EventHandler(this.txtPasswordNew_TextChanged);
             // 
@@ -108,10 +108,10 @@
             // 
             this.txtNombreNew.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtNombreNew.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreNew.Location = new System.Drawing.Point(344, 155);
+            this.txtNombreNew.Location = new System.Drawing.Point(354, 155);
             this.txtNombreNew.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreNew.Name = "txtNombreNew";
-            this.txtNombreNew.Size = new System.Drawing.Size(424, 37);
+            this.txtNombreNew.Size = new System.Drawing.Size(414, 37);
             this.txtNombreNew.TabIndex = 24;
             this.txtNombreNew.TextChanged += new System.EventHandler(this.txtNombreNew_TextChanged);
             // 
@@ -162,7 +162,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(73)))));
             this.label4.Location = new System.Drawing.Point(220, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(563, 106);
@@ -173,9 +173,9 @@
             // 
             // dataGridViewUsuarios
             // 
-            this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuarios.Location = new System.Drawing.Point(248, 449);
+            this.dataGridViewUsuarios.Location = new System.Drawing.Point(254, 449);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             this.dataGridViewUsuarios.RowHeadersWidth = 51;
             this.dataGridViewUsuarios.RowTemplate.Height = 24;

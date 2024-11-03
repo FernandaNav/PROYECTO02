@@ -49,6 +49,7 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "¡Hola,";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 

@@ -27,6 +27,13 @@ namespace PROYECTO02
             {
                 dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
             }
+            dataGridViewUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
+            dataGridViewUsuarios.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewUsuarios.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);
+            dataGridViewUsuarios.DefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 178, 170);
+            dataGridViewUsuarios.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridViewUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridViewUsuarios.EnableHeadersVisualStyles = false;
         }
 
         private void EditarUsuariocs_Load(object sender, EventArgs e)
@@ -169,6 +176,11 @@ namespace PROYECTO02
         private void panEditar_Paint(object sender, PaintEventArgs e)
         {
             BackColor = TransparencyKey;
+        }
+
+        private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
         }
     }
 }
