@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace PROYECTO02
 {
-    public partial class GestLibros : UserControl
+    public partial class SolicitarPrestamo : UserControl
     {
         public Biblioteca Biblioteca { get; set; }
-        public GestLibros(Biblioteca biblioteca)
+        public SolicitarPrestamo(Biblioteca biblioteca)
         {
             this.Biblioteca = biblioteca;
             InitializeComponent();
         }
 
-        private void GestLibros_Paint(object sender, PaintEventArgs e)
+        private void SolicitarPrestamo_Paint(object sender, PaintEventArgs e)
         {
             Color colorInicio = Color.FromArgb(138, 195, 185);
             Color colorFinal = Color.FromArgb(12, 115, 109);
@@ -30,22 +30,22 @@ namespace PROYECTO02
             }
         }
 
-        private void btnAgregarLibro_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            AgregarLibro agregarLibro = new AgregarLibro(this.Biblioteca);
-            agregarLibro.ShowDialog();
-        }
-
-        private void btnEditarLibro_Click(object sender, EventArgs e)
-        {
-            EditarLibro editarLibro = new EditarLibro(this.Biblioteca);
-            editarLibro.ShowDialog();
-        }
-
-        private void btnEliminarLibro_Click(object sender, EventArgs e)
-        {
-            EliminarLibro eliminarLibro = new EliminarLibro(this.Biblioteca);
-            eliminarLibro.ShowDialog();
+            string isbn = txtIsbnBuscar.Text.Trim();
+            if (string.IsNullOrWhiteSpace(isbn))
+            {
+                MessageBox.Show("Por favor, ingrese un ISBN.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                Biblioteca.SolicitarPrestamo(isbn);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

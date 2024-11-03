@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Biblioteca.cs" />
     <Compile Include="Bibliotecario.cs" />
+    <Compile Include="ColaEspera.cs" />
     <Compile Include="Crear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,8 +162,22 @@
     <Compile Include="MostrarUsuarios.Designer.cs">
       <DependentUpon>MostrarUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="pilaAcciones.cs" />
+    <Compile Include="Prestamos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitarPrestamo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SolicitarPrestamo.Designer.cs">
+      <DependentUpon>SolicitarPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolicitudPrestamos.Designer.cs">
+      <DependentUpon>SolicitudPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="AgregarLibro.resx">
       <DependentUpon>AgregarLibro.cs</DependentUpon>
@@ -222,6 +237,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SolicitarPrestamo.resx">
+      <DependentUpon>SolicitarPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolicitudPrestamos.resx">
+      <DependentUpon>SolicitudPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

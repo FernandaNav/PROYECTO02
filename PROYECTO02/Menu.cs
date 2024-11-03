@@ -20,6 +20,7 @@ namespace PROYECTO02
             InitializeComponent();
             slidePanel.Height = btnHome.Height;
             inicioB2.BringToFront();
+            label4.Text = $"        {biblioteca.UsuarioAutenticado.Nombre}";
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -72,7 +73,16 @@ namespace PROYECTO02
         {
             slidePanel.Height = btnLibros.Height;
             slidePanel.Top = btnLibros.Top;
-            gestLibros1.BringToFront();
+            GestLibros gestLibros = new GestLibros(this.biblioteca);
+            gestLibros.Biblioteca = biblioteca;
+            this.Controls.Add(gestLibros);
+            gestLibros.BringToFront();
+            gestLibros.Location = new System.Drawing.Point(265, 68);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

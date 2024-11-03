@@ -11,12 +11,19 @@ namespace PROYECTO02
     {
         private List<Usuario> usuarios;
         private LinkedList<Libro> libros;
+        private LinkedList<Prestamos> prestamosActivos;
+        private LinkedList<string> pilaAcciones;
+        private LinkedList<Usuario> colaEspera;
+
         public Usuario UsuarioAutenticado { get; private set; }
         public Biblioteca()
         {
-            usuarios = new List<Usuario>(); //Inicializa la lista de usuarios                           
+            usuarios = new List<Usuario>();                          
             usuarios.Add(new Bibliotecario("Fernanda", "chuchu"));
             libros = new LinkedList<Libro>();
+            prestamosActivos = new LinkedList<Prestamos>();
+            pilaAcciones = new LinkedList<string>();
+            colaEspera = new LinkedList<Usuario>();
         }
         //MÉTODOS PARA USUARIOS
         public void AgregarUsuario(Usuario usuario)
@@ -160,6 +167,115 @@ namespace PROYECTO02
                 listaLibros.Add(libro);
             }
             return listaLibros;
+        }
+        //TERMINA MÉTODOS PARA LIBROS
+        //EMPIEZAN MÉTODOS PARA PRÉSTAMOS
+        public void SolicitarPrestamo(string isbn)
+        {
+            var libro = BuscarLibroPorISBN(isbn);
+            if (libro == null)
+            {
+                MessageBox.Show("El libro no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (libro.Disponible)
+            {
+                var prestamo = new Prestamos(libro, UsuarioAutenticado);
+                prestamosActivos.AddLast(prestamo);
+                libro.Disponible = false;
+                pilaAcciones.AddLast($"Préstamo de '{libro.Titulo}' para '{UsuarioAutenticado.Nombre}'");
+                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.FechaPrestamo}.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                colaEspera.AddLast(UsuarioAutenticado);
+                MessageBox.Show($"El libro '{libro.Titulo}' no está disponible. Se le ha agregado a la lista de espera.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public void DevolverLibro(string isbn)
+        {
+            var prestamo = prestamosActivos.FirstOrDefault(p => p.Libro.ISBN == isbn && p.Usuario.Equals(UsuarioAutenticado));
+            if (prestamo != null)
+            {
+                prestamosActivos.Remove(prestamo);
+                var libro = prestamo.Libro;
+                libro.Disponible = true;
+                pilaAcciones.AddLast($"Devolución de '{libro.Titulo}' para '{UsuarioAutenticado.Nombre}'");
+                if (colaEspera.Count > 0)
+                {
+                    var siguienteUsuario = colaEspera.First.Value;
+                    colaEspera.RemoveFirst();
+                    SolicitarPrestamo(libro.ISBN);
+                }
+
+                MessageBox.Show($"Libro devuelto: '{libro.Titulo}'.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("El libro no está en la lista de préstamos del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void DeshacerAccion()
+        {
+            var ultimaAccion = pilaAcciones.Last?.Value;
+            if (ultimaAccion == null)
+            {
+                MessageBox.Show("No hay acciones para deshacer.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (ultimaAccion.StartsWith("Préstamo de"))
+            {
+                var partes = ultimaAccion.Split(' ');
+                var libroTitulo = partes[2]; 
+                var usuarioNombre = partes[4]; 
+
+                var libro = BuscarLibroPorTitulo(libroTitulo);
+                var usuario = BuscarUsuario(usuarioNombre);
+
+                if (libro != null && usuario != null)
+                {
+                    libro.Disponible = true;
+                    var prestamo = prestamosActivos.FirstOrDefault(p => p.Libro.ISBN == libro.ISBN && p.Usuario.Equals(usuario));
+                    if (prestamo != null)
+                    {
+                        prestamosActivos.Remove(prestamo);
+                    }
+                    MessageBox.Show($"Se ha deshecho el préstamo de '{libroTitulo}' para '{usuarioNombre}'.", "Acción Deshecha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (ultimaAccion.StartsWith("Devolución de"))
+            {
+                var partes = ultimaAccion.Split(' ');
+                var libroTitulo = partes[2];
+                var usuarioNombre = partes[4];
+
+                var libro = BuscarLibroPorTitulo(libroTitulo);
+                var usuario = BuscarUsuario(usuarioNombre);
+
+                if (libro != null && usuario != null)
+                {
+                    libro.Disponible = false;
+                    var nuevoPrestamo = new Prestamos(libro, usuario);
+                    prestamosActivos.AddLast(nuevoPrestamo);
+                    MessageBox.Show($"Se ha deshecho la devolución de '{libroTitulo}' para '{usuarioNombre}'.", "Acción Deshecha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Acción desconocida para deshacer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            pilaAcciones.RemoveLast();
+        }
+        public List<Prestamos> ObtenerPrestamosActivos()
+        {
+            List<Prestamos> listaPrestamos = new List<Prestamos>();
+            foreach (var prestamo in prestamosActivos)
+            {
+                listaPrestamos.Add(prestamo);
+            }
+            return listaPrestamos; 
         }
 
     }

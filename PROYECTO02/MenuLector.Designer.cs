@@ -30,22 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuLector));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.slidePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.slidePanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.inicioL1 = new PROYECTO02.InicioL();
+            this.label4 = new System.Windows.Forms.Label();
             this.logOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnInformes = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnLibros = new System.Windows.Forms.Button();
-            this.inicioL1 = new PROYECTO02.InicioL();
+            this.btnDevolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,25 +55,24 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(115)))), ((int)(((byte)(109)))));
             this.panel1.Controls.Add(this.slidePanel);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.btnInformes);
+            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.btnLibros);
+            this.panel1.Controls.Add(this.btnDevolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(356, 704);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // slidePanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
-            this.panel2.Controls.Add(this.logOut);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(356, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(981, 83);
-            this.panel2.TabIndex = 1;
+            this.slidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(59)))), ((int)(((byte)(56)))));
+            this.slidePanel.Location = new System.Drawing.Point(-9, 149);
+            this.slidePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.slidePanel.Name = "slidePanel";
+            this.slidePanel.Size = new System.Drawing.Size(43, 132);
+            this.slidePanel.TabIndex = 11;
             // 
             // panel4
             // 
@@ -122,14 +122,38 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Gatuno";
             // 
-            // slidePanel
+            // panel2
             // 
-            this.slidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(59)))), ((int)(((byte)(56)))));
-            this.slidePanel.Location = new System.Drawing.Point(-9, 149);
-            this.slidePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.slidePanel.Name = "slidePanel";
-            this.slidePanel.Size = new System.Drawing.Size(43, 132);
-            this.slidePanel.TabIndex = 11;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.logOut);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(356, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(981, 83);
+            this.panel2.TabIndex = 1;
+            // 
+            // inicioL1
+            // 
+            this.inicioL1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
+            this.inicioL1.Location = new System.Drawing.Point(356, 81);
+            this.inicioL1.Name = "inicioL1";
+            this.inicioL1.Size = new System.Drawing.Size(981, 623);
+            this.inicioL1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(38, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 36);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "        ";
             // 
             // logOut
             // 
@@ -163,23 +187,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnInformes
+            // btnBuscar
             // 
-            this.btnInformes.FlatAppearance.BorderSize = 0;
-            this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformes.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformes.ForeColor = System.Drawing.Color.White;
-            this.btnInformes.Image = ((System.Drawing.Image)(resources.GetObject("btnInformes.Image")));
-            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(36, 561);
-            this.btnInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Size = new System.Drawing.Size(320, 132);
-            this.btnInformes.TabIndex = 10;
-            this.btnInformes.Text = "  Buscar Libro";
-            this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(36, 561);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(320, 132);
+            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.Text = "  Buscar Libro";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnUsuarios
             // 
@@ -198,6 +223,7 @@
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnHome
             // 
@@ -218,31 +244,24 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnLibros
+            // btnDevolver
             // 
-            this.btnLibros.FlatAppearance.BorderSize = 0;
-            this.btnLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibros.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLibros.ForeColor = System.Drawing.Color.White;
-            this.btnLibros.Image = ((System.Drawing.Image)(resources.GetObject("btnLibros.Image")));
-            this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibros.Location = new System.Drawing.Point(36, 424);
-            this.btnLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLibros.Name = "btnLibros";
-            this.btnLibros.Size = new System.Drawing.Size(320, 132);
-            this.btnLibros.TabIndex = 9;
-            this.btnLibros.Text = "  Devolver Libro";
-            this.btnLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLibros.UseVisualStyleBackColor = true;
-            // 
-            // inicioL1
-            // 
-            this.inicioL1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
-            this.inicioL1.Location = new System.Drawing.Point(356, 81);
-            this.inicioL1.Name = "inicioL1";
-            this.inicioL1.Size = new System.Drawing.Size(981, 623);
-            this.inicioL1.TabIndex = 2;
+            this.btnDevolver.FlatAppearance.BorderSize = 0;
+            this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolver.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolver.ForeColor = System.Drawing.Color.White;
+            this.btnDevolver.Image = ((System.Drawing.Image)(resources.GetObject("btnDevolver.Image")));
+            this.btnDevolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolver.Location = new System.Drawing.Point(36, 424);
+            this.btnDevolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(320, 132);
+            this.btnDevolver.TabIndex = 9;
+            this.btnDevolver.Text = "  Devolver Libro";
+            this.btnDevolver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDevolver.UseVisualStyleBackColor = true;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // MenuLector
             // 
@@ -260,9 +279,10 @@
             this.Text = "MenuLector";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuLector_Paint);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -281,8 +301,9 @@
         private System.Windows.Forms.Panel slidePanel;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnLibros;
-        private System.Windows.Forms.Button btnInformes;
+        private System.Windows.Forms.Button btnDevolver;
+        private System.Windows.Forms.Button btnBuscar;
         private InicioL inicioL1;
+        private System.Windows.Forms.Label label4;
     }
 }

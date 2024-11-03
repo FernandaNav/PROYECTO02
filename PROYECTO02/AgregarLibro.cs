@@ -49,9 +49,9 @@ namespace PROYECTO02
                 return;
             }
             string isbn = txtIsbn.Text.Trim();
-            if (isbn.Length != 13) 
+            if (isbn.Length != 3) 
             {
-                MessageBox.Show("El ISBN debe tener 13 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El ISBN debe tener 3 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string titulo = txtTitulo.Text.Trim();

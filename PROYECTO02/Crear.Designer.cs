@@ -106,7 +106,7 @@
             this.cmbRol.Items.AddRange(new object[] {
             "Bibliotecario",
             "Lector"});
-            this.cmbRol.Location = new System.Drawing.Point(355, 405);
+            this.cmbRol.Location = new System.Drawing.Point(353, 409);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(424, 44);
@@ -117,7 +117,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtPassword.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(355, 317);
+            this.txtPassword.Location = new System.Drawing.Point(353, 321);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(424, 37);
@@ -127,7 +127,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtNombre.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(355, 229);
+            this.txtNombre.Location = new System.Drawing.Point(353, 233);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(424, 37);
@@ -139,7 +139,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(291, 404);
+            this.label3.Location = new System.Drawing.Point(289, 408);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 42);
@@ -152,7 +152,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(229, 228);
+            this.label2.Location = new System.Drawing.Point(227, 232);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 42);
@@ -165,7 +165,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(184, 312);
+            this.label1.Location = new System.Drawing.Point(182, 316);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 42);
@@ -179,11 +179,11 @@
             this.label4.Font = new System.Drawing.Font("Poppins Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(276, 89);
+            this.label4.Location = new System.Drawing.Point(218, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(480, 106);
+            this.label4.Size = new System.Drawing.Size(584, 106);
             this.label4.TabIndex = 31;
-            this.label4.Text = "Crear Usuario";
+            this.label4.Text = "¡Crea tu Usuario!";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pictureBox1

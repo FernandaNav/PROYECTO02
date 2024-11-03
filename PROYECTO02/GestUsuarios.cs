@@ -34,7 +34,7 @@ namespace PROYECTO02
         private void btnOpAgregarU_Click(object sender, EventArgs e)
         {
             AgregarUsuario0cs agregar = new AgregarUsuario0cs(this.Biblioteca);
-            agregar.Show();
+            agregar.ShowDialog();
         }
 
         private void btnMostrarU_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace PROYECTO02
         private void btnOpEditarUsuario_Click(object sender, EventArgs e)
         {
             EditarUsuariocs editarEliminar = new EditarUsuariocs(this.Biblioteca);
-            editarEliminar.Show();
+            editarEliminar.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)

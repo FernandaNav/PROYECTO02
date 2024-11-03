@@ -18,6 +18,9 @@ namespace PROYECTO02
         {
             this.biblioteca = biblioteca;
             InitializeComponent();
+            slidePanel.Height = btnHome.Height;
+            inicioL1.BringToFront();
+            label4.Text = $"        {biblioteca.UsuarioAutenticado.Nombre}";
         }
 
         private void MenuLector_Paint(object sender, PaintEventArgs e)
@@ -42,6 +45,29 @@ namespace PROYECTO02
             Form1 formLogin = new Form1(biblioteca);
             formLogin.Show();
             this.Hide();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnUsuarios.Height;
+            slidePanel.Top = btnUsuarios.Top;
+            SolicitarPrestamo solicitarPrestamo = new SolicitarPrestamo(this.biblioteca);
+            solicitarPrestamo.Biblioteca = biblioteca;
+            this.Controls.Add(solicitarPrestamo);
+            solicitarPrestamo.BringToFront();
+            solicitarPrestamo.Location = new System.Drawing.Point(265, 68);
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnDevolver.Height;
+            slidePanel.Top = btnDevolver.Top;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnBuscar.Height;
+            slidePanel.Top = btnBuscar.Top;
         }
     }
 }
