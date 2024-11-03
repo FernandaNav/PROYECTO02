@@ -46,6 +46,7 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Solicitar Préstamo";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Paint += new System.Windows.Forms.PaintEventHandler(this.label4_Paint);
             // 
             // btnBuscar
             // 

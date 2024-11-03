@@ -67,5 +67,10 @@ namespace PROYECTO02
         {
 
         }
+
+        private void label4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

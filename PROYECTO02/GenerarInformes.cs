@@ -22,7 +22,8 @@ namespace PROYECTO02
 
         private void btnOpAgregarU_Click(object sender, EventArgs e)
         {
-            
+            VerPrestamosActivos verPrestamos = new VerPrestamosActivos(this.Biblioteca);
+            verPrestamos.ShowDialog();
         }
 
         private void GenerarInformes_Paint(object sender, PaintEventArgs e)

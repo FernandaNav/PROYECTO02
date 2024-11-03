@@ -192,6 +192,7 @@
       <DependentUpon>SolicitudPrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="VerPrestamo.cs" />
     <Compile Include="VerPrestamosActivos.cs">
       <SubType>Form</SubType>
     </Compile>

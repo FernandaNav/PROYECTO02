@@ -20,7 +20,7 @@ namespace PROYECTO02
             FechaPrestamo = DateTime.Now.Date;
             FechaDevolucion = FechaPrestamo.AddDays(3);
         }
-        public string FechaPrestamoFormateada => FechaPrestamo.ToString("d");
-        public string FechaDevolucionFormateada => FechaDevolucion.ToString("d");
+        public string Prestamo => FechaPrestamo.ToString("d");
+        public string Devolucion => FechaDevolucion.ToString("d");
     }
 }

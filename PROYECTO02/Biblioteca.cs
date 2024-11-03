@@ -193,7 +193,7 @@ namespace PROYECTO02
                 var accion = new Accion("Préstamo", libro, UsuarioAutenticado);
                 pilaAcciones.AddLast(accion);
 
-                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.FechaPrestamoFormateada}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.Prestamo}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -224,7 +224,7 @@ namespace PROYECTO02
                     MessageBox.Show($"El libro '{libro.Titulo}' ha sido asignado a '{siguienteUsuario.Nombre}'.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                MessageBox.Show($"Libro devuelto: '{libro.Titulo}' el {prestamo.FechaDevolucionFormateada}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Libro devuelto: '{libro.Titulo}' el {prestamo.Devolucion}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -272,15 +272,20 @@ namespace PROYECTO02
         {
             return pilaAcciones.Count == 0;
         }
-        public List<Prestamos> ObtenerPrestamosActivos()
+        public List<PrestamoView> ObtenerPrestamosActivos()
         {
-            List<Prestamos> listaPrestamos = new List<Prestamos>();
+            List<PrestamoView> listaPrestamos = new List<PrestamoView>();
             foreach (var prestamo in prestamosActivos)
             {
-                listaPrestamos.Add(prestamo);
+                listaPrestamos.Add(new PrestamoView
+                {
+                    TituloLibro = prestamo.Libro.Titulo,
+                    NombreUsuario = prestamo.Usuario.Nombre,
+                    FechaPrestamo = prestamo.Prestamo,
+                    FechaDevolucion = prestamo.Devolucion
+                });
             }
-            return listaPrestamos; 
+            return listaPrestamos;
         }
-
     }
 }
