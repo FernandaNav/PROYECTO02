@@ -21,7 +21,7 @@ namespace PROYECTO02
             InitializeComponent();
             btnEditar.Visible = false;
             btnEliminar.Visible = false;
-            panEditar.Visible = false;
+            button1.Visible = false;
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
             if (dataGridViewUsuarios.Columns["Contrasena"] != null)
             {
@@ -65,8 +65,7 @@ namespace PROYECTO02
                 cmbRolEdit.SelectedItem = usuarioActual.Rol; 
                 MessageBox.Show("Usuario encontrado. Puede editar o eliminar los datos.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                panEditar.Visible = true;
-                btnEditar.Visible = true;
+                button1.Visible = true;
                 btnEliminar.Visible = true;
             }
             else
@@ -181,6 +180,11 @@ namespace PROYECTO02
         private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridViewUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panEditar.Visible = true;
         }
     }
 }

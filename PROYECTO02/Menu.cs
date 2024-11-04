@@ -82,7 +82,7 @@ namespace PROYECTO02
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnInformes_Click(object sender, EventArgs e)
@@ -94,6 +94,12 @@ namespace PROYECTO02
             this.Controls.Add(generarInformes);
             generarInformes.BringToFront();
             generarInformes.Location = new System.Drawing.Point(265, 68);
+        }
+        public void CerrarSesion()
+        {
+            logOut_Click(null, null);
+
+
         }
     }
 }

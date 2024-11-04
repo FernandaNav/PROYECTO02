@@ -46,7 +46,8 @@ namespace PROYECTO02
 
         private void btnLibrosSolicitados_Click(object sender, EventArgs e)
         {
-
+            LibrosMasSolicitados librosMasSolicitados = new LibrosMasSolicitados(this.Biblioteca);
+            librosMasSolicitados.ShowDialog();
         }
     }
 }

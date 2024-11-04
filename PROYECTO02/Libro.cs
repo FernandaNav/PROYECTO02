@@ -12,7 +12,8 @@ namespace PROYECTO02
         public string Autor { get; set; }
         public string ISBN { get; set; }
         public string Genero { get; set; }
-        public bool Disponible { get; set; } 
+        public bool Disponible { get; set; }
+        public int Solicitudes { get; set; } = 0;
 
         public Libro(string titulo, string autor, string isbn, string genero)
         {
@@ -20,7 +21,8 @@ namespace PROYECTO02
             Autor = autor;
             ISBN = isbn;
             Genero = genero;
-            Disponible = true; 
+            Disponible = true;
+            Solicitudes = 0;
         }
     }
 }

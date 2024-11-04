@@ -157,6 +157,12 @@
     </Compile>
     <Compile Include="Lector.cs" />
     <Compile Include="Libro.cs" />
+    <Compile Include="LibrosMasSolicitados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrosMasSolicitados.Designer.cs">
+      <DependentUpon>LibrosMasSolicitados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InicioL.resx">
       <DependentUpon>InicioL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibrosMasSolicitados.resx">
+      <DependentUpon>LibrosMasSolicitados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

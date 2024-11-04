@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panEditar = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.panEditar.SuspendLayout();
             this.SuspendLayout();
@@ -132,12 +133,12 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.Location = new System.Drawing.Point(192, 232);
+            this.btnEditar.Location = new System.Drawing.Point(795, 137);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(260, 36);
+            this.btnEditar.Size = new System.Drawing.Size(100, 36);
             this.btnEditar.TabIndex = 34;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Guardar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -188,6 +189,7 @@
             this.txtPasswordEdit.Location = new System.Drawing.Point(346, 74);
             this.txtPasswordEdit.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordEdit.Name = "txtPasswordEdit";
+            this.txtPasswordEdit.PasswordChar = '*';
             this.txtPasswordEdit.Size = new System.Drawing.Size(424, 37);
             this.txtPasswordEdit.TabIndex = 40;
             // 
@@ -274,6 +276,7 @@
             this.panEditar.Controls.Add(this.textBox1);
             this.panEditar.Controls.Add(this.label6);
             this.panEditar.Controls.Add(this.label5);
+            this.panEditar.Controls.Add(this.btnEditar);
             this.panEditar.Controls.Add(this.label3);
             this.panEditar.Controls.Add(this.label2);
             this.panEditar.Controls.Add(this.cmbRolEdit);
@@ -286,15 +289,33 @@
             this.panEditar.Visible = false;
             this.panEditar.Paint += new System.Windows.Forms.PaintEventHandler(this.panEditar_Paint);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(192, 232);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 36);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EditarUsuariocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(195)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(981, 708);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewUsuarios);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.label1);
@@ -334,5 +355,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panEditar;
+        private System.Windows.Forms.Button button1;
     }
 }

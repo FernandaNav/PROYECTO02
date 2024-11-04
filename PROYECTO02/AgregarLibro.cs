@@ -20,6 +20,10 @@ namespace PROYECTO02
             InitializeComponent();
             dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
             dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+            if (dataGridViewLibros.Columns["Solicitudes"] != null)
+            {
+                dataGridViewLibros.Columns["Solicitudes"].Visible = false;
+            }
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);

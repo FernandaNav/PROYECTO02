@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PROYECTO02
 {
@@ -37,25 +38,44 @@ namespace PROYECTO02
         }
 
         public void EliminarUsuario(string nombre)
-        {
-            if (UsuarioAutenticado != null && UsuarioAutenticado.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
-            {
-                MessageBox.Show("No se puede eliminar el usuario que está actualmente autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        { //ARREGLAR ESTE MÉTODO
             if (nombre.Equals("Fernanda", StringComparison.OrdinalIgnoreCase))
             {
-                MessageBox.Show("No se permite eliminar al usuario Fernanda.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se permite eliminar al usuario Fernanda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Buscar el usuario que se quiere eliminar
             var usuario = BuscarUsuario(nombre);
-            if (usuario != null)
-            {
-                usuarios.Remove(usuario);
-            }
-            else
+            if (usuario == null)
             {
                 MessageBox.Show("El usuario no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Verificar si el usuario tiene algún préstamo activo
+            var prestamoActivo = prestamosActivos.Any(p => p.Usuario == usuario);
+            if (prestamoActivo)
+            {
+                MessageBox.Show("No se puede eliminar el usuario porque tiene préstamos activos. Debe devolver los libros primero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Verificar si se intenta eliminar al usuario autenticado
+            if (UsuarioAutenticado != null && UsuarioAutenticado.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
+            {
+                usuarios.Remove(usuario);
+                UsuarioAutenticado = null; // Se elimina el usuario autenticado
+
+                MessageBox.Show("Usuario eliminado exitosamente. Será redirigido al inicio de sesión.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var formLogin = new Form1(this);
+                formLogin.ShowDialog();
+                return;
+            }
+
+            // Eliminar al usuario si no es el autenticado
+            usuarios.Remove(usuario);
+            MessageBox.Show("Usuario eliminado exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void EditarUsuario(string nombreOriginal, string nuevoNombre, string nuevaContraseña, string nuevoRol)
@@ -194,11 +214,13 @@ namespace PROYECTO02
                 pilaAcciones.AddLast(accion);
 
                 MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.Prestamo}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                libro.Solicitudes++;
             }
             else
             {
                 colaEspera.AddLast(UsuarioAutenticado);
                 MessageBox.Show($"El libro '{libro.Titulo}' no está disponible. Se le ha agregado a la lista de espera.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                libro.Solicitudes++;
             }
         }
         public void DevolverLibro(string isbn)
@@ -286,6 +308,10 @@ namespace PROYECTO02
                 });
             }
             return listaPrestamos;
+        }
+        public List<Libro> ObtenerLibrosMasSolicitados()
+        {
+            return libros.OrderByDescending(l => l.Solicitudes).ToList();
         }
     }
 }
