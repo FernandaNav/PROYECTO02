@@ -18,12 +18,12 @@ namespace PROYECTO02
         {
             this.biblioteca = biblioteca;
             InitializeComponent();
-            dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
-            dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
-            if (dataGridViewLibros.Columns["Solicitudes"] != null)
+            dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosOrdenados();
+            foreach (DataGridViewColumn column in dataGridViewLibros.Columns)
             {
-                dataGridViewLibros.Columns["Solicitudes"].Visible = false;
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+            DiseñoDataGridView();
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);
@@ -73,8 +73,8 @@ namespace PROYECTO02
             {
                 biblioteca.AgregarLibro(nuevoLibro);
                 dataGridViewLibros.DataSource = null;
-                dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
-                dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+                dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosOrdenados();
+                DiseñoDataGridView();
                 MessageBox.Show("Libro agregado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnLimpiar_Click(sender, e);
             }
@@ -96,6 +96,19 @@ namespace PROYECTO02
 
         private void dataGridViewLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+        private void DiseñoDataGridView()
+        {
+            dataGridViewLibros.Columns[0].Width = 125;
+            dataGridViewLibros.Columns[1].Width = 110;
+            dataGridViewLibros.Columns[2].Width = 70;
+            dataGridViewLibros.Columns[3].Width = 100;
+            dataGridViewLibros.Columns[4].Width = 100;
+            dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+            if (dataGridViewLibros.Columns["Solicitudes"] != null)
+            {
+                dataGridViewLibros.Columns["Solicitudes"].Visible = false;
+            }
         }
     }
 }

@@ -73,6 +73,11 @@ namespace PROYECTO02
         {
             slidePanel.Height = btnBuscar.Height;
             slidePanel.Top = btnBuscar.Top;
+            BuscarLibrosLector buscarLibrosLector = new BuscarLibrosLector(this.biblioteca);
+            buscarLibrosLector.Biblioteca = biblioteca;
+            this.Controls.Add(buscarLibrosLector);
+            buscarLibrosLector.BringToFront();
+            buscarLibrosLector.Location = new System.Drawing.Point(265, 68);
         }
 
         private void btnDeshacer_Click(object sender, EventArgs e)

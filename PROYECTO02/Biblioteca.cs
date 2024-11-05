@@ -45,7 +45,7 @@ namespace PROYECTO02
                 return;
             }
 
-            // Buscar el usuario que se quiere eliminar
+            //Buscar el usuario que se quiere eliminar
             var usuario = BuscarUsuario(nombre);
             if (usuario == null)
             {
@@ -53,7 +53,7 @@ namespace PROYECTO02
                 return;
             }
 
-            // Verificar si el usuario tiene algún préstamo activo
+            //Verificar si el usuario tiene algún préstamo activo
             var prestamoActivo = prestamosActivos.Any(p => p.Usuario == usuario);
             if (prestamoActivo)
             {
@@ -61,7 +61,7 @@ namespace PROYECTO02
                 return;
             }
 
-            // Verificar si se intenta eliminar al usuario autenticado
+            //Verificar si se intenta eliminar al usuario autenticado
             if (UsuarioAutenticado != null && UsuarioAutenticado.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
             {
                 usuarios.Remove(usuario);
@@ -73,7 +73,7 @@ namespace PROYECTO02
                 return;
             }
 
-            // Eliminar al usuario si no es el autenticado
+            //Eliminar al usuario si no es el autenticado
             usuarios.Remove(usuario);
             MessageBox.Show("Usuario eliminado exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -161,23 +161,6 @@ namespace PROYECTO02
                 }
             }
             return null; 
-        }
-        public Libro BuscarLibroPorTitulo(string titulo)
-        {
-            return BuscarLibroPorTituloRecursivo(libros.First, titulo);
-        }
-
-        private Libro BuscarLibroPorTituloRecursivo(LinkedListNode<Libro> nodo, string titulo)
-        {
-            if (nodo == null) //el caso base es que no hayan más nodos
-            {
-                return null; 
-            }
-            if (nodo.Value.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase))
-            {//si encuentra el título dentro de la lista enlazada
-                return nodo.Value;
-            }
-            return BuscarLibroPorTituloRecursivo(nodo.Next, titulo); //Llamada Recursiva, se coloca el nodo "siguiente" en el parámetro
         }
         public List<Libro> ObtenerLibros()
         {
@@ -312,6 +295,77 @@ namespace PROYECTO02
         public List<Libro> ObtenerLibrosMasSolicitados()
         {
             return libros.OrderByDescending(l => l.Solicitudes).ToList();
+        }
+        public LinkedList<Libro> QuickSortLibrosPorTitulo(LinkedList<Libro> listaLibros)
+        {
+            if (listaLibros.Count <= 1)
+                return listaLibros;
+            Libro pivote = listaLibros.First.Value;
+            LinkedList<Libro> izquierda = new LinkedList<Libro>();
+            LinkedList<Libro> derecha = new LinkedList<Libro>();
+
+            foreach (var libro in listaLibros)
+            {
+                if (libro != pivote)
+                {
+                    if (string.Compare(libro.Titulo, pivote.Titulo, StringComparison.OrdinalIgnoreCase) < 0)
+                        izquierda.AddLast(libro);
+                    else
+                        derecha.AddLast(libro);
+                }
+            }
+            var resultado = new LinkedList<Libro>(QuickSortLibrosPorTitulo(izquierda));
+            resultado.AddLast(pivote);//agregar el pivote
+            foreach (var libro in QuickSortLibrosPorTitulo(derecha))
+                resultado.AddLast(libro);
+
+            return resultado;
+        }
+        public List<Libro> ObtenerLibrosOrdenados()
+        {
+            var librosOrdenados = QuickSortLibrosPorTitulo(libros);
+            return librosOrdenados.ToList();
+        }
+        public List<Libro> BuscarLibrosPorCriterioRecursivo(LinkedListNode<Libro> nodoActual, string criterio)
+        {
+            List<Libro> resultados = new List<Libro>();
+
+            if (nodoActual == null)
+            {
+                return resultados;
+            }
+
+            // Validar que el criterio no sea nulo o vacío
+            if (string.IsNullOrEmpty(criterio))
+            {
+                MessageBox.Show("El criterio de búsqueda no puede estar vacío.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return resultados;
+            }
+
+            if (nodoActual.Value.Titulo != null && nodoActual.Value.Titulo.Contains(criterio) || nodoActual.Value.Autor != null && nodoActual.Value.Autor.Contains(criterio) || nodoActual.Value.ISBN != null && nodoActual.Value.ISBN.Contains(criterio))
+            {
+                resultados.Add(nodoActual.Value);
+            }
+
+
+            resultados.AddRange(BuscarLibrosPorCriterioRecursivo(nodoActual.Next, criterio));
+            return resultados;
+        }
+
+        public void MostrarLibrosEncontrados(string criterio, DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+            var resultados = BuscarLibrosPorCriterioRecursivo(libros.First, criterio);
+
+            foreach (var libro in resultados)
+            {
+                dgv.Rows.Add(libro.Titulo, libro.Autor, libro.ISBN, libro.Genero, libro.Disponible);
+            }
+
+            if (resultados.Count == 0)
+            {
+                MessageBox.Show("No se encontraron coincidencias.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

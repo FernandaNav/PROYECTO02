@@ -62,7 +62,7 @@ namespace PROYECTO02
             string rol = cmbUsuarioNew.SelectedItem.ToString();
             Usuario nuevoUsuario;
 
-            if (biblioteca.ObtenerUsuarios().Any(u => u.Nombre == nombre)) // Asegúrate de que la propiedad Nombre exista en tu clase Usuario
+            if (biblioteca.ObtenerUsuarios().Any(u => u.Nombre == nombre))  
             {
                 MessageBox.Show($"El nombre de usuario '{nombre}' ya existe. Intenta con otro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -83,7 +83,7 @@ namespace PROYECTO02
             }
             if (biblioteca == null)
             {
-                MessageBox.Show("La biblioteca no está inicializada.");
+                MessageBox.Show("La biblioteca no está inicializada."); //por si no está llamando a mi biblioteca
                 return;
             }
             biblioteca.AgregarUsuario(nuevoUsuario);

@@ -118,6 +118,7 @@
             this.btnBuscarLibro.TabIndex = 15;
             this.btnBuscarLibro.Text = "Buscar Libro";
             this.btnBuscarLibro.UseVisualStyleBackColor = false;
+            this.btnBuscarLibro.Click += new System.EventHandler(this.btnBuscarLibro_Click);
             // 
             // GestLibros
             // 

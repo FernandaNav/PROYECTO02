@@ -57,6 +57,7 @@
             this.dataGridViewLibros.RowTemplate.Height = 24;
             this.dataGridViewLibros.Size = new System.Drawing.Size(814, 316);
             this.dataGridViewLibros.TabIndex = 16;
+            this.dataGridViewLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibros_CellContentClick);
             // 
             // btnRegresar
             // 

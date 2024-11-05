@@ -49,5 +49,10 @@ namespace PROYECTO02
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(532, 120);
         }
+
+        private void dataGridViewLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

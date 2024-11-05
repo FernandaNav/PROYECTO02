@@ -13,7 +13,7 @@ namespace PROYECTO02
 {
     public partial class GestUsuarios : UserControl
     {
-        public Biblioteca Biblioteca { get; set; } // Propiedad para almacenar la biblioteca
+        public Biblioteca Biblioteca { get; set; } //Propiedad para almacenar la biblioteca
 
         public GestUsuarios(Biblioteca biblioteca)
         {

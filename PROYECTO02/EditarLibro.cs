@@ -20,12 +20,8 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             panEditar.Visible = false;
-            dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
-            dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
-            if (dataGridViewLibros.Columns["Solicitudes"] != null)
-            {
-                dataGridViewLibros.Columns["Solicitudes"].Visible = false;
-            }
+            dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosOrdenados();
+            DiseñoDataGridView();
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);
@@ -128,8 +124,8 @@ namespace PROYECTO02
                     txtIsbnBuscar.Text = string.Empty;
                     panEditar.Visible = false;
                     dataGridViewLibros.DataSource = null;
-                    dataGridViewLibros.DataSource = biblioteca.ObtenerLibros();
-                    dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+                    dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosOrdenados();
+                    DiseñoDataGridView();
                     LimpiarCampos();
                 }
                 catch (Exception ex)
@@ -138,6 +134,19 @@ namespace PROYECTO02
                 }
             }
 
+        }
+        private void DiseñoDataGridView()
+        {
+            dataGridViewLibros.Columns[0].Width = 125;
+            dataGridViewLibros.Columns[1].Width = 110;
+            dataGridViewLibros.Columns[2].Width = 70;
+            dataGridViewLibros.Columns[3].Width = 100;
+            dataGridViewLibros.Columns[4].Width = 100;
+            dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
+            if (dataGridViewLibros.Columns["Solicitudes"] != null)
+            {
+                dataGridViewLibros.Columns["Solicitudes"].Visible = false;
+            }
         }
     }
 }

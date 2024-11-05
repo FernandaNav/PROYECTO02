@@ -82,11 +82,11 @@
             // 
             this.dataGridViewLibros.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLibros.Location = new System.Drawing.Point(121, 478);
+            this.dataGridViewLibros.Location = new System.Drawing.Point(118, 476);
             this.dataGridViewLibros.Name = "dataGridViewLibros";
             this.dataGridViewLibros.RowHeadersWidth = 51;
             this.dataGridViewLibros.RowTemplate.Height = 24;
-            this.dataGridViewLibros.Size = new System.Drawing.Size(733, 186);
+            this.dataGridViewLibros.Size = new System.Drawing.Size(744, 186);
             this.dataGridViewLibros.TabIndex = 35;
             this.dataGridViewLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLibros_CellContentClick);
             // 

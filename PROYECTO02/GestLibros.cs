@@ -47,5 +47,11 @@ namespace PROYECTO02
             EliminarLibro eliminarLibro = new EliminarLibro(this.Biblioteca);
             eliminarLibro.ShowDialog();
         }
+
+        private void btnBuscarLibro_Click(object sender, EventArgs e)
+        {
+            Búsqueda busqueda = new Búsqueda(this.Biblioteca);
+            busqueda.ShowDialog();
+        }
     }
 }

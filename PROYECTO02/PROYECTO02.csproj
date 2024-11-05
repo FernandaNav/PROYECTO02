@@ -82,6 +82,18 @@
     </Compile>
     <Compile Include="Biblioteca.cs" />
     <Compile Include="Bibliotecario.cs" />
+    <Compile Include="BuscarLibrosLector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BuscarLibrosLector.Designer.cs">
+      <DependentUpon>BuscarLibrosLector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Búsqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Búsqueda.Designer.cs">
+      <DependentUpon>Búsqueda.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColaEspera.cs" />
     <Compile Include="Crear.cs">
       <SubType>Form</SubType>
@@ -213,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuario0cs.resx">
       <DependentUpon>AgregarUsuario0cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarLibrosLector.resx">
+      <DependentUpon>BuscarLibrosLector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Búsqueda.resx">
+      <DependentUpon>Búsqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Crear.resx">
       <DependentUpon>Crear.cs</DependentUpon>
