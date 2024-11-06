@@ -93,6 +93,7 @@
             this.txtBusqueda.Font = new System.Drawing.Font("Poppins Light", 14F);
             this.txtBusqueda.Location = new System.Drawing.Point(202, 264);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBusqueda.MaxLength = 3;
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(442, 42);
             this.txtBusqueda.TabIndex = 39;

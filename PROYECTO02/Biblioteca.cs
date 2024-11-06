@@ -20,7 +20,7 @@ namespace PROYECTO02
         public Biblioteca()
         {
             usuarios = new List<Usuario>();                          
-            usuarios.Add(new Bibliotecario("Fernanda", "chuchu"));
+            usuarios.Add(new Bibliotecario("Fernanda", "123"));
             libros = new LinkedList<Libro>();
             prestamosActivos = new LinkedList<Prestamos>();
             colaEspera = new LinkedList<Usuario>();

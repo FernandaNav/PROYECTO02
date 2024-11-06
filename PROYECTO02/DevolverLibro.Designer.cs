@@ -84,6 +84,7 @@
             this.txtIsbnBuscar.Font = new System.Drawing.Font("Poppins Light", 16F);
             this.txtIsbnBuscar.Location = new System.Drawing.Point(253, 323);
             this.txtIsbnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIsbnBuscar.MaxLength = 3;
             this.txtIsbnBuscar.Name = "txtIsbnBuscar";
             this.txtIsbnBuscar.Size = new System.Drawing.Size(424, 47);
             this.txtIsbnBuscar.TabIndex = 42;
