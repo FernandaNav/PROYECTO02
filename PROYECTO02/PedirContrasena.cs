@@ -27,5 +27,10 @@ namespace PROYECTO02
             this.DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
