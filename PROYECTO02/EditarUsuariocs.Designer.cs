@@ -80,12 +80,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(226, 132);
+            this.label1.Location = new System.Drawing.Point(271, 132);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(472, 42);
+            this.label1.Size = new System.Drawing.Size(372, 42);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Ingresa el nombre del usuario a editar";
+            this.label1.Text = "Ingresa el nombre del usuario";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnRegresar
@@ -113,7 +113,7 @@
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscar.Location = new System.Drawing.Point(623, 178);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -131,12 +131,12 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.Location = new System.Drawing.Point(795, 137);
+            this.btnEditar.Location = new System.Drawing.Point(751, 208);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 36);
+            this.btnEditar.Size = new System.Drawing.Size(135, 36);
             this.btnEditar.TabIndex = 34;
             this.btnEditar.Text = "Guardar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -149,7 +149,7 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEliminar.Location = new System.Drawing.Point(477, 232);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -186,12 +186,12 @@
             // 
             this.txtPasswordEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtPasswordEdit.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasswordEdit.Location = new System.Drawing.Point(346, 74);
+            this.txtPasswordEdit.Location = new System.Drawing.Point(391, 74);
             this.txtPasswordEdit.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordEdit.Name = "txtPasswordEdit";
-            this.txtPasswordEdit.PasswordChar = '*';
             this.txtPasswordEdit.Size = new System.Drawing.Size(424, 37);
             this.txtPasswordEdit.TabIndex = 40;
+            this.txtPasswordEdit.UseSystemPasswordChar = true;
             // 
             // cmbRolEdit
             // 
@@ -201,7 +201,7 @@
             this.cmbRolEdit.Items.AddRange(new object[] {
             "Bibliotecario",
             "Lector"});
-            this.cmbRolEdit.Location = new System.Drawing.Point(346, 129);
+            this.cmbRolEdit.Location = new System.Drawing.Point(391, 129);
             this.cmbRolEdit.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRolEdit.Name = "cmbRolEdit";
             this.cmbRolEdit.Size = new System.Drawing.Size(424, 44);
@@ -226,7 +226,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(79, 69);
+            this.label3.Location = new System.Drawing.Point(124, 69);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(245, 42);
@@ -239,7 +239,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(187, 131);
+            this.label5.Location = new System.Drawing.Point(232, 131);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 42);
@@ -252,7 +252,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(206, 13);
+            this.label6.Location = new System.Drawing.Point(251, 13);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 42);
@@ -262,9 +262,8 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(346, 14);
+            this.textBox1.Location = new System.Drawing.Point(391, 14);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(424, 37);
@@ -282,9 +281,9 @@
             this.panEditar.Controls.Add(this.cmbRolEdit);
             this.panEditar.Controls.Add(this.txtPasswordEdit);
             this.panEditar.Controls.Add(this.txtNombreEdit);
-            this.panEditar.Location = new System.Drawing.Point(29, 290);
+            this.panEditar.Location = new System.Drawing.Point(-35, 290);
             this.panEditar.Name = "panEditar";
-            this.panEditar.Size = new System.Drawing.Size(930, 188);
+            this.panEditar.Size = new System.Drawing.Size(994, 333);
             this.panEditar.TabIndex = 33;
             this.panEditar.Visible = false;
             this.panEditar.Paint += new System.Windows.Forms.PaintEventHandler(this.panEditar_Paint);
@@ -296,7 +295,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(192, 232);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

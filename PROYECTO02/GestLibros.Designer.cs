@@ -55,7 +55,7 @@
             this.btnAgregarLibro.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAgregarLibro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnAgregarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarLibro.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarLibro.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAgregarLibro.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregarLibro.Location = new System.Drawing.Point(106, 228);
             this.btnAgregarLibro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -73,7 +73,7 @@
             this.btnEditarLibro.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEditarLibro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnEditarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarLibro.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarLibro.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEditarLibro.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditarLibro.Location = new System.Drawing.Point(505, 228);
             this.btnEditarLibro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -91,7 +91,7 @@
             this.btnEliminarLibro.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEliminarLibro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnEliminarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarLibro.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarLibro.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEliminarLibro.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEliminarLibro.Location = new System.Drawing.Point(106, 378);
             this.btnEliminarLibro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -109,7 +109,7 @@
             this.btnBuscarLibro.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBuscarLibro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnBuscarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarLibro.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarLibro.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuscarLibro.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarLibro.Location = new System.Drawing.Point(505, 378);
             this.btnBuscarLibro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

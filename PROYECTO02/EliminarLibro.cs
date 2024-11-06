@@ -38,7 +38,7 @@ namespace PROYECTO02
 
             if (libroActual != null)
             {
-                MessageBox.Show("Libro encontrado, puede proceder a eliminar.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Libro encontrado, puedes eliminar.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnEliminar.Visible = true; 
             }
             else
@@ -64,7 +64,6 @@ namespace PROYECTO02
                 try
                 {
                     biblioteca.EliminarLibro(libroActual.ISBN);
-                    MessageBox.Show("Libro eliminado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridViewLibros.DataSource = null;
                     dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosOrdenados();
                     DiseñoDataGridView();
@@ -74,7 +73,7 @@ namespace PROYECTO02
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -105,6 +104,10 @@ namespace PROYECTO02
         }
         private void DiseñoDataGridView()
         {
+            foreach (DataGridViewColumn column in dataGridViewLibros.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             dataGridViewLibros.Columns[0].Width = 125;
             dataGridViewLibros.Columns[1].Width = 110;
             dataGridViewLibros.Columns[2].Width = 70;

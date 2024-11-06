@@ -19,6 +19,16 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosMasSolicitados();
+            foreach (DataGridViewColumn column in dataGridViewLibros.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dataGridViewLibros.Columns[0].Width = 100;
+            dataGridViewLibros.Columns[1].Width = 100;
+            dataGridViewLibros.Columns[2].Width = 70;
+            dataGridViewLibros.Columns[3].Width = 95;
+            dataGridViewLibros.Columns[4].Width = 100;
+            dataGridViewLibros.Columns[5].Width = 90;
             dataGridViewLibros.Columns["Disponible"].ReadOnly = true;
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;

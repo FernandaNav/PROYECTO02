@@ -40,7 +40,7 @@
             this.btnOpAgregarU.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnOpAgregarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnOpAgregarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpAgregarU.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpAgregarU.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnOpAgregarU.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOpAgregarU.Location = new System.Drawing.Point(313, 246);
             this.btnOpAgregarU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -58,7 +58,7 @@
             this.btnOpEditarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnOpEditarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnOpEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpEditarUsuario.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpEditarUsuario.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnOpEditarUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOpEditarUsuario.Location = new System.Drawing.Point(313, 373);
             this.btnOpEditarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

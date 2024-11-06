@@ -19,10 +19,13 @@ namespace PROYECTO02
         {
             this.biblioteca = biblioteca;
             InitializeComponent();
-            btnEditar.Visible = false;
             btnEliminar.Visible = false;
             button1.Visible = false;
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             if (dataGridViewUsuarios.Columns["Contrasena"] != null)
             {
                 dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
@@ -60,7 +63,7 @@ namespace PROYECTO02
             usuarioActual = biblioteca.BuscarUsuario(nombreBuscado);
             if (usuarioActual != null)
             {
-                txtNombreEdit.Text = usuarioActual.Nombre; 
+                textBox1.Text = usuarioActual.Nombre; 
                 txtPasswordEdit.Text = usuarioActual.Contrasena;
                 cmbRolEdit.SelectedItem = usuarioActual.Rol; 
                 MessageBox.Show("Usuario encontrado. Puede editar o eliminar los datos.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -75,15 +78,15 @@ namespace PROYECTO02
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e) //este botón sería de guardar cambios
         {
             if (usuarioActual == null)
             {
-                MessageBox.Show("Por favor, busque un usuario antes de editar.","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, busca un usuario antes de editar.","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtNombreEdit.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
                 string.IsNullOrWhiteSpace(txtPasswordEdit.Text) ||
                 string.IsNullOrWhiteSpace(cmbRolEdit.Text))
             {
@@ -91,7 +94,7 @@ namespace PROYECTO02
                 return;
             }
 
-            string nuevoNombre = txtNombreEdit.Text;
+            string nuevoNombre = textBox1.Text;
             string nuevaContraseña = txtPasswordEdit.Text;
             string nuevoRol = cmbRolEdit.SelectedItem.ToString();
 
@@ -102,7 +105,6 @@ namespace PROYECTO02
                 {
                     biblioteca.EditarUsuario(usuarioActual.Nombre, nuevoNombre, nuevaContraseña, nuevoRol);
                     usuarioActual.Nombre = nuevoNombre;
-                    MessageBox.Show("Usuario actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ActualizarDataGridView();
                     LimpiarCampos();
                 }
@@ -119,12 +121,16 @@ namespace PROYECTO02
             txtPasswordEdit.Text = string.Empty;
             cmbRolEdit.SelectedIndex = -1;
             usuarioActual = null;
-            btnEditar.Visible = false;
+            button1.Visible = false;
             btnEliminar.Visible = false;
             panEditar.Visible = false;
         }
         private void ActualizarDataGridView()
         {
+            foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             dataGridViewUsuarios.DataSource = null; 
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
             if (dataGridViewUsuarios.Columns["Contrasena"] != null)
@@ -179,12 +185,31 @@ namespace PROYECTO02
 
         private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridViewUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //este es para darle opcion a editar
         {
-            panEditar.Visible = true;
+            PedirContrasena formularioContrasena = new PedirContrasena(this.biblioteca); // Pedimos la contraseña
+
+            if (formularioContrasena.ShowDialog() == DialogResult.OK)
+            {
+                string contrasenaIngresada = formularioContrasena.Password;
+
+                // Verificar si la contraseña ingresada es correcta
+                if (usuarioActual != null && contrasenaIngresada == usuarioActual.Contrasena)
+                {
+                    // Si la contraseña es correcta, mostramos el panel de edición
+                    panEditar.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta. No se puede editar el usuario.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Acción cancelada.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

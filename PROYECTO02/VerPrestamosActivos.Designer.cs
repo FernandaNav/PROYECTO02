@@ -52,7 +52,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins Black", 46F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(79, 119);
+            this.label1.Location = new System.Drawing.Point(57, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(823, 135);
             this.label1.TabIndex = 14;

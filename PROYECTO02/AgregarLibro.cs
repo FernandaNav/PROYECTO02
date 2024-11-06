@@ -19,10 +19,6 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             dataGridViewLibros.DataSource = biblioteca.ObtenerLibrosOrdenados();
-            foreach (DataGridViewColumn column in dataGridViewLibros.Columns)
-            {
-                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
             DiseñoDataGridView();
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
             dataGridViewLibros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -99,6 +95,10 @@ namespace PROYECTO02
         }
         private void DiseñoDataGridView()
         {
+            foreach (DataGridViewColumn column in dataGridViewLibros.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             dataGridViewLibros.Columns[0].Width = 125;
             dataGridViewLibros.Columns[1].Width = 110;
             dataGridViewLibros.Columns[2].Width = 70;

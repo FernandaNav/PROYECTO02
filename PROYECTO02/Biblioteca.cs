@@ -38,51 +38,56 @@ namespace PROYECTO02
         }
 
         public void EliminarUsuario(string nombre)
-        { //ARREGLAR ESTE MÉTODO
+        {
             if (nombre.Equals("Fernanda", StringComparison.OrdinalIgnoreCase))
-            {
+            {//para que nunca se elimine a Fernanda
                 MessageBox.Show("No se permite eliminar al usuario Fernanda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            //Buscar el usuario que se quiere eliminar
             var usuario = BuscarUsuario(nombre);
             if (usuario == null)
             {
                 MessageBox.Show("El usuario no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            //Verificar si el usuario tiene algún préstamo activo
-            var prestamoActivo = prestamosActivos.Any(p => p.Usuario == usuario);
+            var prestamoActivo = prestamosActivos.Any(p => p.Usuario == usuario);//para verificar si el usuario tiene algun prestamo activo
             if (prestamoActivo)
             {
-                MessageBox.Show("No se puede eliminar el usuario porque tiene préstamos activos. Debe devolver los libros primero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede eliminar el usuario porque tiene préstamos activos. Debe devolver los libros primero.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            //Verificar si se intenta eliminar al usuario autenticado
-            if (UsuarioAutenticado != null && UsuarioAutenticado.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
+            using (var passwordPrompt = new PedirContrasena(this))
             {
-                usuarios.Remove(usuario);
-                UsuarioAutenticado = null; // Se elimina el usuario autenticado
+                if (passwordPrompt.ShowDialog() == DialogResult.OK)
+                {
+                    if (usuario.Contrasena == passwordPrompt.Password)
+                    {
+                        if (UsuarioAutenticado != null && UsuarioAutenticado.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
+                        {
+                            usuarios.Remove(usuario);
+                            UsuarioAutenticado = null; 
 
-                MessageBox.Show("Usuario eliminado exitosamente. Será redirigido al inicio de sesión.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var formLogin = new Form1(this);
-                formLogin.ShowDialog();
-                return;
+                            MessageBox.Show("Usuario eliminado exitosamente. Al cerrar tu sesión, no podrás volver a ingresar.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            usuarios.Remove(usuario);
+                            MessageBox.Show("Usuario eliminado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-
-            //Eliminar al usuario si no es el autenticado
-            usuarios.Remove(usuario);
-            MessageBox.Show("Usuario eliminado exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         public void EditarUsuario(string nombreOriginal, string nuevoNombre, string nuevaContraseña, string nuevoRol)
         {
             if (nombreOriginal.Equals("Fernanda", StringComparison.OrdinalIgnoreCase))
             {
-                MessageBox.Show("No se permite editar al usuario Fernanda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se permite editar al usuario Fernanda.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             var usuario = BuscarUsuario(nombreOriginal);
@@ -90,11 +95,12 @@ namespace PROYECTO02
             {
                 usuario.Nombre = nuevoNombre; 
                 usuario.Contrasena = nuevaContraseña; 
-                usuario.Rol = nuevoRol; 
+                usuario.Rol = nuevoRol;
+                MessageBox.Show("Usuario actualizado exitosamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("El usuario no existe.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El usuario no existe.","", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -141,15 +147,22 @@ namespace PROYECTO02
         }
         public void EliminarLibro(string isbn)
         {
-            var libro = BuscarLibroPorISBN(isbn);
-            if (libro != null)
+            var libroAEliminar = libros.FirstOrDefault(libro => libro.ISBN == isbn);
+
+            if (libroAEliminar == null)
             {
-                libros.Remove(libro);
+                MessageBox.Show("El libro no existe en el inventario.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+            var libroPrestado = prestamosActivos.FirstOrDefault(prestamo => prestamo.Libro.ISBN == isbn);
+
+            if (libroPrestado != null) //si el libro está prestado, no es puede eliminar
             {
-                throw new Exception("El libro no existe.");
+                MessageBox.Show("No se puede eliminar el libro porque está prestado.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            libros.Remove(libroAEliminar);
+            MessageBox.Show("El libro ha sido eliminado correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public Libro BuscarLibroPorISBN(string isbn)
         {
@@ -187,23 +200,31 @@ namespace PROYECTO02
                 MessageBox.Show($"Ya tienes el libro '{libro.Titulo}' prestado.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            var resultado = MessageBox.Show($"¿Estás seguro de pedir el libro '{libro.Titulo}' del autor '{libro.Autor}'?", "Confirmar Solicitud", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
-            if (libro.Disponible)
+            if (resultado == DialogResult.Yes)
             {
-                var prestamo = new Prestamos(libro, UsuarioAutenticado);
-                prestamosActivos.AddLast(prestamo);
-                libro.Disponible = false;
-                var accion = new Accion("Préstamo", libro, UsuarioAutenticado);
-                pilaAcciones.AddLast(accion);
+                if (libro.Disponible)
+                {
+                    var prestamo = new Prestamos(libro, UsuarioAutenticado);
+                    prestamosActivos.AddLast(prestamo);
+                    libro.Disponible = false;
+                    var accion = new Accion("Préstamo", libro, UsuarioAutenticado);
+                    pilaAcciones.AddLast(accion);
 
-                MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.Prestamo}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                libro.Solicitudes++;
+                    MessageBox.Show($"Préstamo realizado: '{libro.Titulo}' el {prestamo.Prestamo}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    libro.Solicitudes++;
+                }
+                else
+                {
+                    colaEspera.AddLast(UsuarioAutenticado);
+                    MessageBox.Show($"El libro '{libro.Titulo}' no está disponible. Se le ha agregado a la lista de espera.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    libro.Solicitudes++;
+                }
             }
             else
             {
-                colaEspera.AddLast(UsuarioAutenticado);
-                MessageBox.Show($"El libro '{libro.Titulo}' no está disponible. Se le ha agregado a la lista de espera.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                libro.Solicitudes++;
+                MessageBox.Show("La solicitud de préstamo ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public void DevolverLibro(string isbn)
@@ -211,25 +232,33 @@ namespace PROYECTO02
             var prestamo = prestamosActivos.FirstOrDefault(p => p.Libro.ISBN == isbn && p.Usuario.Equals(UsuarioAutenticado));
             if (prestamo != null)
             {
-                prestamosActivos.Remove(prestamo);
                 var libro = prestamo.Libro;
-                libro.Disponible = true;
-                var accion = new Accion("Devolución", libro, UsuarioAutenticado);
-                pilaAcciones.AddLast(accion);
-                if (colaEspera.Count > 0)
+                var resultado = MessageBox.Show($"¿Estás seguro de devolver el libro '{libro.Titulo}' del autor '{libro.Autor}'?","Confirmar Devolución",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
                 {
-                    var siguienteUsuario = colaEspera.First.Value;
-                    colaEspera.RemoveFirst();
-                    var nuevoPrestamo = new Prestamos(libro, siguienteUsuario);
-                    prestamosActivos.AddLast(nuevoPrestamo); 
-                    libro.Disponible = false; 
-                    var accionPrestamo = new Accion("Préstamo", libro, siguienteUsuario); 
-                    pilaAcciones.AddLast(accionPrestamo); 
+                    prestamosActivos.Remove(prestamo);
+                    libro.Disponible = true;
+                    var accion = new Accion("Devolución", libro, UsuarioAutenticado);
+                    pilaAcciones.AddLast(accion);
+                    if (colaEspera.Count > 0)
+                    {
+                        var siguienteUsuario = colaEspera.First.Value;
+                        colaEspera.RemoveFirst();
+                        var nuevoPrestamo = new Prestamos(libro, siguienteUsuario);
+                        prestamosActivos.AddLast(nuevoPrestamo);
+                        libro.Disponible = false;
+                        var accionPrestamo = new Accion("Préstamo", libro, siguienteUsuario);
+                        pilaAcciones.AddLast(accionPrestamo);
 
-                    MessageBox.Show($"El libro '{libro.Titulo}' ha sido asignado a '{siguienteUsuario.Nombre}'.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"El libro '{libro.Titulo}' ha sido asignado a '{siguienteUsuario.Nombre}'.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    MessageBox.Show($"Libro devuelto: '{libro.Titulo}' el {prestamo.Devolucion}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                MessageBox.Show($"Libro devuelto: '{libro.Titulo}' el {prestamo.Devolucion}.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("La devolución ha sido cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
@@ -287,7 +316,6 @@ namespace PROYECTO02
                     TituloLibro = prestamo.Libro.Titulo,
                     NombreUsuario = prestamo.Usuario.Nombre,
                     FechaPrestamo = prestamo.Prestamo,
-                    FechaDevolucion = prestamo.Devolucion
                 });
             }
             return listaPrestamos;
@@ -334,8 +362,6 @@ namespace PROYECTO02
             {
                 return resultados;
             }
-
-            // Validar que el criterio no sea nulo o vacío
             if (string.IsNullOrEmpty(criterio))
             {
                 MessageBox.Show("El criterio de búsqueda no puede estar vacío.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -359,13 +385,17 @@ namespace PROYECTO02
 
             foreach (var libro in resultados)
             {
-                dgv.Rows.Add(libro.Titulo, libro.Autor, libro.ISBN, libro.Genero, libro.Disponible);
+                string disponibilidad = ConvertirDisponibilidad(libro.Disponible);
+                dgv.Rows.Add(libro.Titulo, libro.Autor, libro.ISBN, libro.Genero, disponibilidad);
             }
-
             if (resultados.Count == 0)
             {
                 MessageBox.Show("No se encontraron coincidencias.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private string ConvertirDisponibilidad(bool disponible)
+        {
+            return disponible ? "SI" : "NO";
         }
     }
 }

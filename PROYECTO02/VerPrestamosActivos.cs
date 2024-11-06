@@ -19,14 +19,20 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             dataGridPrestamos.DataSource = biblioteca.ObtenerPrestamosActivos();
+            foreach (DataGridViewColumn column in dataGridPrestamos.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             dataGridPrestamos.Columns["TituloLibro"].HeaderText = "Título del Libro";
-            dataGridPrestamos.Columns["TituloLibro"].Width = 140;
+            dataGridPrestamos.Columns["TituloLibro"].Width = 175;
             dataGridPrestamos.Columns["NombreUsuario"].HeaderText = "Usuario";
-            dataGridPrestamos.Columns["NombreUsuario"].Width = 120;
+            dataGridPrestamos.Columns["NombreUsuario"].Width = 150;
             dataGridPrestamos.Columns["FechaPrestamo"].HeaderText = "Fecha de Préstamo";
-            dataGridPrestamos.Columns["FechaPrestamo"].Width = 120;
-            dataGridPrestamos.Columns["FechaDevolucion"].HeaderText = "Fecha de Devolución";
-            dataGridPrestamos.Columns["FechaDevolucion"].Width = 120;
+            dataGridPrestamos.Columns["FechaPrestamo"].Width = 175;
+            if (dataGridPrestamos.Columns["FechaDevolucion"] != null)
+            {
+                dataGridPrestamos.Columns["FechaDevolucion"].Visible = false;
+            }
             dataGridPrestamos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(8, 77, 73);
             dataGridPrestamos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridPrestamos.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Bold);

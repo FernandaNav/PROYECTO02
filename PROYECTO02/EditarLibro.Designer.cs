@@ -97,7 +97,7 @@
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscar.Location = new System.Drawing.Point(631, 151);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -155,7 +155,7 @@
             this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.Location = new System.Drawing.Point(445, 201);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -173,7 +173,7 @@
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditar.Location = new System.Drawing.Point(92, 201);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

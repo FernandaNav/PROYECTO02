@@ -19,6 +19,10 @@ namespace PROYECTO02
             this.biblioteca = biblioteca;
             InitializeComponent();
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             if (dataGridViewUsuarios.Columns["Contrasena"] != null)
             {
                 dataGridViewUsuarios.Columns["Contrasena"].Visible = false;
@@ -89,6 +93,10 @@ namespace PROYECTO02
             biblioteca.AgregarUsuario(nuevoUsuario);
             dataGridViewUsuarios.DataSource = null;
             dataGridViewUsuarios.DataSource = biblioteca.ObtenerUsuarios();
+            foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
+            {
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             if (dataGridViewUsuarios.Columns["Contrasena"] != null)
             {
                 dataGridViewUsuarios.Columns["Contrasena"].Visible = false;

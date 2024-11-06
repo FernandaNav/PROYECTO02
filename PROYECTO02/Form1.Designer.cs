@@ -201,9 +201,9 @@
             this.txtPassword.Location = new System.Drawing.Point(490, 469);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(424, 37);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // cmbUsuario

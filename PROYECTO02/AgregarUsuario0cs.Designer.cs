@@ -49,7 +49,7 @@
             this.btnLimpiar1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnLimpiar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnLimpiar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar1.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar1.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar1.Location = new System.Drawing.Point(622, 359);
             this.btnLimpiar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -67,7 +67,7 @@
             this.btnAgregarUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAgregarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnAgregarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarUser.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarUser.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAgregarUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregarUser.Location = new System.Drawing.Point(200, 359);
             this.btnAgregarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

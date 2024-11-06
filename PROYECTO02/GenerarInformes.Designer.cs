@@ -48,12 +48,12 @@
             // 
             // btnLibrosSolicitados
             // 
-            this.btnLibrosSolicitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.btnLibrosSolicitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
             this.btnLibrosSolicitados.FlatAppearance.BorderSize = 0;
             this.btnLibrosSolicitados.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnLibrosSolicitados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.btnLibrosSolicitados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnLibrosSolicitados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibrosSolicitados.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLibrosSolicitados.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLibrosSolicitados.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLibrosSolicitados.Location = new System.Drawing.Point(313, 373);
             this.btnLibrosSolicitados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -66,12 +66,12 @@
             // 
             // btnOpAgregarU
             // 
-            this.btnOpAgregarU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
+            this.btnOpAgregarU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
             this.btnOpAgregarU.FlatAppearance.BorderSize = 0;
             this.btnOpAgregarU.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnOpAgregarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(75)))), ((int)(((byte)(60)))));
+            this.btnOpAgregarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnOpAgregarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpAgregarU.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpAgregarU.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnOpAgregarU.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOpAgregarU.Location = new System.Drawing.Point(313, 246);
             this.btnOpAgregarU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

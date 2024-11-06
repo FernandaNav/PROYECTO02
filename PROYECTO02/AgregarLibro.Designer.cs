@@ -116,6 +116,7 @@
             this.txtIsbn.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIsbn.Location = new System.Drawing.Point(174, 174);
             this.txtIsbn.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIsbn.MaxLength = 3;
             this.txtIsbn.Name = "txtIsbn";
             this.txtIsbn.Size = new System.Drawing.Size(291, 37);
             this.txtIsbn.TabIndex = 39;
@@ -186,7 +187,7 @@
             this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.Location = new System.Drawing.Point(566, 332);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -204,7 +205,7 @@
             this.btnAgregarUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAgregarUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(43)))), ((int)(((byte)(42)))));
             this.btnAgregarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarUser.Font = new System.Drawing.Font("Poppins Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarUser.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregarUser.Location = new System.Drawing.Point(262, 332);
             this.btnAgregarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
